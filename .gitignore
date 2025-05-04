@@ -1,0 +1,7 @@
+.venv/
+
+docs/build/doctrees/*
+docs/build/html/*
+docs/build/latex/*
+!docs/build/latex/pastexam.pdf
+
