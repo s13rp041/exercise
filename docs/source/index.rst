@@ -11,7 +11,12 @@ Add your content using ``reStructuredText`` syntax. See the
 documentation for details.
 
 
-.. .. toctree::
-..    :maxdepth: 2
-..    :caption: Contents:
+.. toctree::
+   :maxdepth: 2
+   :caption: Contents:
+
+   saitama_univ/index
+   tmu_univ/index
+   ist_univ/index
+   
 
