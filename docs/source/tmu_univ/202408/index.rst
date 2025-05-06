@@ -14,39 +14,43 @@
 複素関数のイメージ
 ------------------------------------
 
-実数値の関数と異なり、複素変数の複素数値関数はグラフ上に表すことはできない。
-しかし :math:`z` 平面上の特定の図形や集合が :math:`w` 平面上でどのような図形となるかを
-調べることで、関数についてうかがい知ることができる。
+実数値の関数のグラフは、これまで意識することなく描いてきたように、
+（1変数関数であれば） :math:`xy` 平面上にグラフ :math:`f(x)` を描画することができる。
+しかし、これと異なり、複素数値の関数のグラフは一つの平面上に表すことはできない。
+複素関数 :math:`f(z) \quad (z = x + iy)` は二つの変数 :math:`x, y` で表され、
+変換後の値（複素数） :math:`w = f(z)` も二つの変数 :math:`u(x, y), v(x, y)` で表されるので、
+4次元となるため、一つの平面上でグラフを表現することは難しい。
+なので、通常は変換前の複素数平面 :math:`z` と変換後の複素数平面 :math:`w` を考え、
+もとの平面上の座標や図形がどのように変換されるかを追うことで、関数について知ることができる。
 
-次の関数（変換）を考える。
+例えば、次の関数（変換）により、座標や図形がどのように変換されるかを考えてみる。
 
 .. math::
     w = z + \frac{1}{z}
 
-そして :math:`z` 平面上で半径1の円、半径 :math:`r` の円、および :math:`x` 軸上の線分が、
-それぞれ :math:`w` 平面上のどの位置に移るかを考える。
+座標や図形としては、 :math:`z` 平面上で半径1の円、半径 :math:`r` の円、および :math:`x` 軸上の線分を対象にすることとする。
 
-まず、 :math:`x` 軸上の線分について考える。
-:math:`z` 平面上の :math:`x` 軸上の点 (1, 0) を考える。
+まず、 :math:`x` 軸上の線分について調べてみる。
+:math:`z` 平面上の :math:`x` 軸上の点 (1, 0) を考えると、
 これは :math:`z = 1` なので :math:`w` は :math:`w = 1 + \frac{1}{1} = 2` となる。
 なので、:math:`w` 平面上では点 (2, 0) に移ることとなる。
 
-次に :math:`x` 軸上で :math:`x > 1` の半直線を考える。
+次に :math:`x` 軸上で :math:`x > 1` の半直線を調べよう。
 このとき :math:`z = x` なので :math:`w = x + \frac{1}{x}` に移る。
 :math:`x > 1` を考えているので :math:`w > 2` である。
 微分すると :math:`\frac{dw}{dx} = 1 - \frac{1}{x^2} > 0 (x > 1)` なので、
 :math:`z` 平面上で :math:`x` が大きくなる方向へ移動すると、
-:math:`w` 平面上でも :math:`u` が大きくなる方向へ移動する。
+:math:`w` 平面上でも :math:`u` が大きくなる方向へ移動することがわかる。
 
-次に半径1の半円を考える。
-半径1の円は :math:`z = e^{i \theta}, (0 \leq \theta \leq \pi)` と表せる。
+次に半径1の半円を調べてみる。
+半径1の半円は :math:`z = e^{i \theta}, (0 \leq \theta \leq \pi)` と表せる。
 なので :math:`w = e^{i \theta} + e^{-i \theta} = 2 \cos \theta` となり、
 取りうる値の範囲は :math:`-2 \leq w(= 2 \cos \theta) \leq 2` である。
 したがって、 :math:`z` 平面上での半円は :math:`w` 平面上では :math:`x` 軸上の線分に移る。
 :math:`z` 平面上で :math:`\theta` が 0 のとき :math:`w` 平面上では :math:`x` が最大となり、
-:math:`\theta` が大きくなるにつれて :math:`x` は小さくなる方向に移動していく。
+:math:`\theta` が大きくなるにつれて :math:`x` は小さくなる方向に移動していくことがわかる。
 
-最後に半径 :math:`r_0` の半円がどのように移るかを考える。
+最後に半径 :math:`r_0` の半円がどのように移るかを考えよう。
 この半円は :math:`z = r_0 e^{i \theta}` と表せるので、
 :math:`w = r_0 e^{i \theta} + \frac{1}{r_0 e^{i \theta}}` となる。
 これは次のように変形できる。
@@ -54,12 +58,15 @@
 .. math::
     w &= r_0 e^{i \theta} + r_0^{-1} e^{-i \theta} \\
       &= (r_0 + r_0^{-1}) \cos \theta + i(r_0 - r_0^{-1}) \sin \theta \\
-      &= a \cos \theta + i b \sin \theta, a = r_0 + r_0^{-1}, b = r_0 - r_0^{-1} \\
-    (\frac{u}{a})^2 + (\frac{v}{b})^2 = 1
+      &= a \cos \theta + i b \sin \theta \quad (a = r_0 + r_0^{-1}, b = r_0 - r_0^{-1}) \\
+    (\frac{u}{a})^2 + (\frac{v}{b})^2 &= 1
 
 これは焦点が :math:`w = \pm \sqrt{a^2 - b^2} = \pm 2` の楕円である。
 
-.. hint:: 楕円の式
+以上のように、各座標や図形について関数 :math:`f(z)` によってどのように変換されるかを
+調べることで、その関数の概要を知ることが可能である。
+
+.. note:: 楕円の式
     
     楕円とは、2定点からの距離の和が一定となるような平面上の点の軌跡である。
     この定点のことを焦点という。
@@ -69,14 +76,14 @@
         \frac{X^2}{a^2} + \frac{Y^2}{b^2} = 1
     
     これは以下のようにして導かれる。
-    まず、2つの焦点を :math:`X` 軸上におき、:math:`F(c, 0), F'(-c, 0) \quad c > 0` とする。
+    まず、2つの焦点を :math:`X` 軸上におき、:math:`F(c, 0), F'(-c, 0) \quad (c > 0)` とする。
     点 :math:`P` の座標を :math:`(X, Y)` とすると
 
     .. math::
-        PF + PF' &= const. = 2a \\
+        PF + PF' &= const. = 2a \quad (\text{これは楕円の定義より}) \\
         \sqrt{(X -c)^2 + Y^2} + \sqrt{(X + c)^2 + Y^2} &= 2a \\
-        (X + c)^2 + Y^2 &= \{2a - \sqrt{(X + c)^2 + Y^2}\}^2 \\
-        &= 4a^2 -4a \sqrt{(X + c)^2 + Y^2} + (X + c)^2 + Y^2 \\
+        (X + c)^2 + Y^2 &= \{2a - \sqrt{(X - c)^2 + Y^2}\}^2 \\
+        &= 4a^2 -4a \sqrt{(X - c)^2 + Y^2} + (X - c)^2 + Y^2 \\
         \sqrt{(X - c)^2 + Y^2} &= a - \frac{c}{a} X \\
         (X - c)^2 + Y^2 &= a^2 -2cX + \frac{c^2}{a^2} X^2 \\
         (1 - \frac{c^2}{a^2}) X^2 + Y^2 &= a^2 - c^2 \\
@@ -87,10 +94,10 @@
     .. math::
         \frac{X^2}{a^2} + \frac{Y^2}{b^2} = 1
     
-    を得る。
+    となり、楕円の式を得る。
 
 
-.. hint:: :math:`\epsilon - \delta` 論法
+.. note:: :math:`\epsilon - \delta` 論法
 
     （TBD）
 
@@ -98,67 +105,83 @@
 コーシー・リーマンの方程式
 ------------------------------------
 
-関数
+複素関数における重要な式の一つに、コーシー・リーマンの方程式がある。
+これは関数 :math:`f(z) = u(x, y) + iv(x, y)` が微分可能であるとき、
+:math:`u, v` の偏導関数の間に成り立つ関係を述べたものである。
+この方程式は関数 :math:`f(z)` の微分可能性ともかかわっている。
+
+コーシー・リーマンの方程式は次である。
+関数 :math:`f(z) = u(x, y) + iv(x, y)` が :math:`z_0 = x_0 + iy_0` で微分可能であるとき、
+次の関係をコーシー・リーマンの方程式という。
 
 .. math::
-    f(z) = u(x, y) + i v(x, y)
+    u_x (x_0, y_0) &= v_y (x_0, y_0) \\
+    u_y (x_0, y_0) &= -v_x (x_0, y_0) \\
 
-が :math:`z_0 = x_0 + i y_0` で微分可能、つまり、極限
+
+これは以下のようにして導くことができる。
+いま、 :math:`f(z)` が :math:`z_0 = x_0 + iy_0` で微分可能としているので、次の極限が存在する。
 
 .. math::
     f'(z_0) = \lim_{\varDelta z \to 0} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}
 
-が存在すると仮定するとき、 :math:`f'(z_0)` が :math:`u` と :math:`v` の偏導関数で
+複素数の極限が存在するとき、実部、虚部それぞれで極限をとったものと同値なので、
 
 .. math::
-    f'(z_0) = u_x (x_0, y_0) + i v_x (x_0, y_0) \\
-    f'(z_0) = v_y (x_0, y_0) - i u_y (x_0, y_0)
-
-と表される。そして、次の **コーシー・リーマンの方程式** を満たす。
-
-.. math::
-    u_x (x_0, y_0) = v_y (x_0, y_0) \\
-    u_y (x_0, y_0) = -v_x (x_0, y_0)
-
-コーシー・リーマンの方程式の一つ目の式を次のとおり導出する。
-
-極限の式が成り立つとき、複素関数の極限は実部と虚部それぞれで極限をとったものに等しいから、
-
-.. math::
-    \text{Re} f'(z_0) = \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Re} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z} \\
-    \text{Im} f'(z_0) = \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Im} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}
+    \text{Re} f'(z_0) &= \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Re} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z} \\
+    \text{Im} f'(z_0) &= \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Im} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}
 
 が成り立つ。
-
-また、次のように計算できる。
-
-.. math::
-    \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}
-    = \frac{\{u(x_0 + \varDelta x, y_0 + \varDelta y) - u(x_0, y_0)\} + i \{v(x_0 + \varDelta x, y_0 + \varDelta y) - v(x_0, y_0)\}}
-    {\varDelta x + i \varDelta y}
-
-
-いま、極限 :math:`f'(z_0)` が存在すると仮定すると、
-いかなる向きから0に近づけても常に一つの値が定まり、それが :math:`f'(z_0)` なので、
-上式の :math:`(\varDelta x, \varDelta y) \to (0, 0)` としても常に一つの値が定まる（経路に依らない）。
-
-よって、 :math:`\varDelta y = 0` としてもよいので、上式は次のようになる。
+そして次の変化量を計算する。
 
 .. math::
     \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}
-    &= \frac{u(x_0 + \varDelta x, y_0) - u(x_0, y_0)}{\varDelta x}
-    + i \frac{v(x_0 + \varDelta x, y_0) - v(x_0, y_0)}{\varDelta x} \\
-    &= u_x(x_0, y_0) + i v_x(x_0, y_0)
+    = \frac{{u(x_0 + \varDelta x, y_0 + \varDelta y) - u(x_0, y_0)} + i{v(x_0 + \varDelta x, y_0 + \varDelta y) - v(x_0, y_0)}}{\varDelta x + i \varDelta y}
 
-同様に :math:`\varDelta x = 0` と置くことで、二つ目の式も導くことができる。
-
-極形式のコーシー・リーマンの方程式は次のように表される。
+極限はただ一つなので、いかなる方向から :math:`\varDelta z \to 0` としても常に一つの値 :math:`f'(z_0)` が定まる。
+同様に :math:`Re f'(z_0), Im f'(z_0)` の式についてもどのような向きから極限をとっても値は一つ（:math:`Re f'(z_0), Im f'(z_0)`）に定まる。
+そこで、特に :math:`\varDelta y = 0` とし、 :math:`\varDelta x \to 0` としても極限の値は変わらないから、
+上式で :math:`\varDelta y = 0` とすると
 
 .. math::
-    u_r = \frac{1}{r} v_\theta, \quad \frac{1}{r} u_\theta = - v_r
+    \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}
+    &= \frac{{u(x_0 + \varDelta x, y_0) - u(x_0, y_0)} + i{v(x_0 + \varDelta x, y_0) - v(x_0, y_0)}}{\varDelta x} \\
+    &= \frac{u(x_0 + \varDelta x, y_0) - u(x_0, y_0)}{\varDelta x} + i \frac{v(x_0 + \varDelta x, y_0) - v(x_0, y_0)}{\varDelta x}
+
+よって、
+
+.. math::
+    \text{Re} f'(z_0) &= \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Re} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z} \\
+    &= \lim_{\varDelta x \to 0} \frac{u(x_0 + \varDelta x, y_0) - u(x_0, y_0)}{\varDelta x} \\
+    &= u_x(x_0, y_0)
+
+同様に
+
+.. math::
+    \text{Im} f'(z_0) &= \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Im} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z} \\
+    &= \lim_{\varDelta x \to 0} \frac{v(x_0 + \varDelta x, y_0) - v(x_0, y_0)}{\varDelta x} \\
+    &= v_x(x_0, y_0)
+
+よって、
+
+.. math::
+    f'(z_0) = u_x(x_0, y_0) + iv_x(x_0, y_0)
+
+が成り立つ。
+先ほどは :math:`\varDelta y = 0` としてが、 :math:`\varDelta x = 0` とすることで、
+同様の方法で次の関係式が導かれる。
+
+.. math::
+    f'(z_0) = v_y(x_0, y_0) - iu_y(x_0, y_0)
+
+:math:`f'(z_0)` はただ一つの値なので、次の関係式、つまり、コーシー・リーマンの方程式が成り立つ。
+
+.. math::
+    u_x(x_0, y_0) &= v_y(x_0, y_0) \\
+    v_x(x_0, y_0) &= -u_y(x_0, y_0)
 
 
-.. hint:: 合成関数の微分
+.. note:: 合成関数の微分
 
     はじめに1変数関数の連鎖律を見る。
     :math:`z = f(x, y)` が全微分可能で :math:`x = x(t), y = y(t)` が微分可能であるとき、
@@ -222,8 +245,13 @@
     &= \int_a^b (ux' - vy') dt + i \int_a^b (vx' + uy') dt \\
     &= \int_C udx - vdy + i \int_C vdx + udy = \int_C f(z) dz
 
-これは :math:`f(z) = u + iv, dz = dx + idy` とおいて、
+これは :math:`f(z) = u + iv, dz = dx + idy` とおいて、次のように
 形式的な計算を行ったものと同じ形をしている。
+
+.. math::
+    \int_C f(z) dz &= \int_C (u + iv) (dx + idy) \\
+    &= \int_C (udx - vdy) + i(vdx + udy) \\
+    &= \int_C udx - vdy + i \int_C vdx + udy
 
 次の例を考える。
 :math:`C_1` が2点 :math:`z=0` と :math:`z=2+i` を結ぶ線分であるとき、
@@ -246,7 +274,7 @@
 コーシーの積分定理
 ------------------------------------
 
-.. hint:: グリーンの定理
+.. note:: グリーンの定理
 
     :math:`xy` 平面で単一閉曲線（ジョルダン曲線） :math:`C` で囲まれた領域を :math:`R` とする。
     二つの関数 :math:`M(x, y), N(x, y)` が :math:`C` と :math:`R` を含む領域で連続な偏導関数
@@ -299,13 +327,83 @@
     f(z) \text{ が正則}, f'(z) \text{ が連続ならば }
     \int_C f(z) dz = 0
 
+ジョルダン曲線、つまり、積分を単一閉曲線を一周すると 0 となる。
+
 :math:`f(z)` が正則でなければコーシー・リーマンの定理が成り立たず、
 また、:math:`f'(z)` が連続でなければグリーンの定理が成り立たないので、
 いずれも必要である。
+（が、実は、グルサーの定理で示されるように :math:`f'(z)` の連続性を取り除いてもこの式は成り立つのである。）
 
 :math:`\int_C f(z) dz = 0` であるとき :math:`\int_{-C} f(z) dz = - \int_C f(z) = 0` であるから、
 コーシーの積分定理における :math:`C` の向きは本質的ではなくなる。
 すなわち、正の向きでも負の向きでも無関係に積分の値は 0 である。
+
+
+コーシー・グルサーの定理
+------------------------------------
+
+区分的に滑らかなジョルダン曲線 :math:`C` の上と内部で :math:`f(z)` が正則ならば、
+:math:`\int_C f(z) dz = 0` である。これをコーシー・グルサーの定理という。
+
+:math:`f'(z)` の連続性を取り除くことができることには重要な意味がある。
+この定理から、次の定理が成り立つことになる。
+
+:math:`C_1, C_2` が単連結領域 :math:`D` 内の2点を結ぶ区分的になめらかな曲線であるとき、
+:math:`f(z)` が :math:`D` で正則ならば :math:`\int_{C_1} f(z) dz = \int_{C_2} f(z) dz` である。
+
+これは、単連結領域における正則関数に対しては、積分路は無関係に端点のみで積分の値が定めることを示している。
+
+多重連結の場合も、コーシー・グルサーの定理が成り立つ。
+多重連結の場合は、曲線 :math:`C` とその内部にある曲線 :math:`C_j (j =1, 2, ..., n)` を考える。
+各曲線はすべて滑らかなジョルダン曲線で、 :math:`C_j` はすべて :math:`C` の内部にあり、
+しかも、 :math:`C_j` の内部の点は互いに共通点を持たないとする。
+:math:`R` は :math:`C` の内部から :math:`C_j` の内部の点を除いた部分と
+:math:`C` 上の点からなる集合とする。
+また、 :math:`R` の内部が左にあるように :math:`C` と :math:`C_j` に向きをつけた :math:`R` の
+境界を :math:`B` とする。このとき :math:`f(z)` が :math:`R` で正則ならば
+
+.. math::
+    \int_B f(z) dz = \int_C f(z) dz + \int_{C_1} f(z) dz + ... + \int_{C_n} f(z) dz = 0
+
+である。:math:`C, C_1, C_2, ..., C_n` の向きがすべて同じであるとすると
+
+.. math::
+    \int_C f(z) dz = \int_{C_1} f(z) dz + \int_{C_2} f(z) dz + ... + \int_{C_n} f(z) dz
+
+である。特に、 :math:`C` の内部に :math:`C_1` のみがある場合
+
+.. math::
+    \int_C f(z) dz = \int_{C_1} f(z) dz
+
+となり、これは積分路の変形原理と呼ばれる。 :math:`C_1` を連続的に変形して :math:`C` に近づけていっても、
+積分の値は常に不変であることを示している。
+
+.. image:: ./images/Cauchy-Goursat.png
+        :align: center
+
+
+コーシーの積分公式
+------------------------------------
+
+次の式が成り立つ（コーシーの積分公式）
+
+正の向きを持った区分的に滑らかなジョルダン曲線 :math:`C` の上と内部で
+:math:`f(z)` は正則であるとする。
+:math:`z_0` が :math:`C` の内部の任意の点のとき、
+
+.. math::
+    f(z_0) = \frac{1}{2 \pi i} \int_C \frac{f(z)}{z - z_0} dz
+
+が成り立つ。
+この定理は、:math:`C` の内部の点 :math:`z_0` における関数の値 :math:`f(z_0)` が
+:math:`C` の上の点 :math:`z` における :math:`f(z)` の値で定まる、ことを示す。
+また、次のように書き直すと、曲線 :math:`C` に沿う線積分の値を求める場合に応用することができる。
+
+.. math::
+    \int_C \frac{f(z)}{z - z_0} dz = 2 \pi i f(z_0)
+
+
+
 
 
 
