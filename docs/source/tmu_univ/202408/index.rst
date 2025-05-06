@@ -200,6 +200,44 @@
 
     （参考）https://www2.math.kyushu-u.ac.jp/~hara/lectures/12/biseki1213b.pdf
 
+
+微分可能性についてみるため、次の関数を考えてみる。
+
+.. math::
+    f(z) = |z^2|
+
+変化量は次のように計算できる。
+
+.. math::
+    \frac{\varDelta w}{\varDelta z} = \frac{|z + \varDelta z|^2 - |z^2|}{\varDelta z}
+    = \frac{(z + \varDelta z)(\bar{z} + \bar{\varDelta z}) - z \bar{z}}{\varDelta z} = \bar{z} + \bar{\varDelta z} + z \frac{\bar{\varDelta z}}{\varDelta z}
+
+これより、 :math:`z = 0` においては、 :math:`\varDelta w / \varDelta z = \bar{\varDelta z}` となる。
+よって、極限が存在、つまり、微分可能でその値は :math:`f'(0) = \lim_{\varDelta z \to 0} \bar{\varDelta z} = 0` である。
+
+一方、 :math:`z \neq 0` の場合は少し異なる。
+変化量 :math:`\varDelta z` が :math:`\varDelta z = \bar{\varDelta z}` の場合、すなわち、 :math:`\varDelta z` が実数の場合、
+
+.. math::
+    \varDelta z \to 0 \Longrightarrow \varDelta w / \varDelta z = \bar{z} + \varDelta z + z \to \bar{z} + z
+
+となる。他方、 :math:`\varDelta z = - \bar{\varDelta z}` の場合、つまり、純虚数の場合、
+
+.. math::
+    \varDelta z \to 0 \Longrightarrow \varDelta w / \varDelta z = \bar{z} - \varDelta z - z \to \bar{z} - z
+
+したがって、これら二つ（ :math:`\varDelta` が実数か純虚数か）で極限が異なっている。
+つまり、 0 への近づき方により極限が異なる。なので、 :math:`z \neq 0` では :math:`\varDelta z \to 0` のとき
+極限は存在しない、言い換えると、 :math:`z \neq 0` では微分可能ではない。
+
+0 への近づき方について、次のとおり補足する。
+:math:`\varDelta z` が実数の場合、 :math:`\varDelta z \to 0` は複素平面上で実軸に沿って
+原点方向へ近づくこととなる。他方、純虚数の場合は、虚軸に沿って原点方向へ近づくので、
+これらは原点への近づき方が異なっている。
+異なる方向から原点に近づいたとき、極限 :math:`\lim_{\varDelta z \to 0} f'(z_0)` は異なる値をとるので、
+これは微分可能ではない。
+
+
 正則関数
 ------------------------------------
 
@@ -223,7 +261,7 @@
     * 境界点をすべて含む集合を **閉集合** という。
 
 
-複素積分
+線積分
 ------------------------------------
 
 複素数 :math:`z` の複素数値関数 :math:`f(z)` の積分について考える。
@@ -232,10 +270,11 @@
 .. math::
     C: z(t) = x(t) + i y(t) \quad (a \leq t \leq b)
 
+関数 :math:`f(z) = u(x, y) + iv(x, y)` は :math:`C` 上で区分的に連続な関数とする。
 このとき、:math:`C` に沿う :math:`f(z)` の線積分を次で定義する。
 
 .. math::
-    \int_C f(z) dz &= \int_a^b f(z(t)) z'(t) dt \\
+    \underbrace{\int_C f(z) dz}_{\text{線分 C 上の関数 f(z) の値を足し合わせたもの}} &= \int_a^b f(z(t)) z'(t) dt \\
     z'(t) dt &= \frac{dz}{dt} dt = dz
 
 上式の右辺は次のように展開できる。
@@ -243,10 +282,15 @@
 .. math::
     \text{右辺} &= \int_a^b (u + iv)(x' + iy') dt \\
     &= \int_a^b (ux' - vy') dt + i \int_a^b (vx' + uy') dt \\
-    &= \int_C udx - vdy + i \int_C vdx + udy = \int_C f(z) dz
+    &= \int_C udx - vdy + i \int_C vdx + udy
+
+よって、以下のように書ける（定義から以下が導かれる）。
+
+.. math::
+    \int_C f(z) dz = \int_C udx - vdy + i \int_C vdx + udy
 
 これは :math:`f(z) = u + iv, dz = dx + idy` とおいて、次のように
-形式的な計算を行ったものと同じ形をしている。
+形式的な計算を行ったものと同じ形をしている（つまり、形式的な計算の結果が定義から導かれるものと一致している）。
 
 .. math::
     \int_C f(z) dz &= \int_C (u + iv) (dx + idy) \\
@@ -279,11 +323,13 @@
     :math:`xy` 平面で単一閉曲線（ジョルダン曲線） :math:`C` で囲まれた領域を :math:`R` とする。
     二つの関数 :math:`M(x, y), N(x, y)` が :math:`C` と :math:`R` を含む領域で連続な偏導関数
     をもっているとする。また、閉曲線 :math:`C` には図のような向きがついているとする。
-    このとき次の等式が成り立つ。
+    このとき次の等式が成り立つ（グリーンの定理）。
 
     .. math::
         \int_C (M dx + N dy) = \int \int_R (\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}) dx dy
     
+    グリーンの定理は、線積分（左辺）と面積分（右辺）をつなぐものである。
+
     .. image:: ./images/green_theorem.png
         :scale: 60%
         :align: center
@@ -297,7 +343,7 @@
         \int \int_R \frac{\partial M}{\partial y} dx dy &= \int_a^b \int_{Y_1(x)}^{Y_2(x)} \frac{\partial M}{\partial y} dy dx \\
         &= \int_a^b [M(x, y)]_{y = Y_1(x)}^{y = Y_2(x)} dx \\
         &= \int_a^b M(x, Y_2(x)) dx - \int_a^b M(x, Y_1(x)) dx \\
-        &= - \int_{BFA} M dx - \int_{AEB} M dx \\
+        &= - \int_{C_2} M dx - \int_{C_1} M dx \\
         &= \int_C M dx
     
     同様にして、:math:`\int \int_R \frac{\partial N}{\partial x} dx dy = \int_C N dy` となる。
@@ -316,7 +362,7 @@
 .. math::
     \int_C f(z) dz = \int \int_R (-v_x - u_y) dx dy + i \int \int_R (u_x - v_y) dx dy
 
-ところで、 :math:`f(z)` は正則なので、コーシー・リーマンの方程式 :math:`u_x = v_y, u_y = -v_x` が成り立つので、
+ところで、 :math:`f(z)` は正則なので、コーシー・リーマンの方程式 :math:`u_x = v_y, u_y = -v_x` が成り立つから、
 右辺の値は 0 となる。
 
 したがって、次の重要な定理 コーシーの積分定理 を得る。
@@ -360,7 +406,8 @@
 :math:`R` は :math:`C` の内部から :math:`C_j` の内部の点を除いた部分と
 :math:`C` 上の点からなる集合とする。
 また、 :math:`R` の内部が左にあるように :math:`C` と :math:`C_j` に向きをつけた :math:`R` の
-境界を :math:`B` とする。このとき :math:`f(z)` が :math:`R` で正則ならば
+境界を :math:`B` とする（ :math:`C` のみ反時計回り、それ以外は時計回りである）。
+このとき :math:`f(z)` が :math:`R` で正則ならば
 
 .. math::
     \int_B f(z) dz = \int_C f(z) dz + \int_{C_1} f(z) dz + ... + \int_{C_n} f(z) dz = 0
@@ -380,6 +427,63 @@
 
 .. image:: ./images/Cauchy-Goursat.png
         :align: center
+
+
+原始関数と線積分
+------------------------------
+
+これまで、 :math:`\int_C f(z) dz = \int_a^b f(z(t)) z'(t) dt` や
+コーシーの積分公式などから線積分の値を求められることを見てきた。
+ここでは、実関数と同様に、原始関数を使用して定積分の値を求められることを見ていく。
+
+原始関数に関して、次の定理が成り立つ。
+
+:math:`f(z)` は 領域 :math:`D` で連続、 :math:`F(z)` が :math:`f(z)` の原始関数であるとき、
+:math:`D` 内の区分的に滑らかな曲線 :math:`C: z = z(t) \quad (a \leq t \leq b)` に沿う線積分
+
+.. math::
+    \int_C f(z) dz = \int_a^b f(z(t)) z'(t) dt
+
+の値は
+
+.. math::
+    \int_C f(z) dz = [F(z(t))]_a^b = F(z(b)) - F(z(a))
+
+である。
+これは次のようにして証明できる。
+
+区分的に滑らかな曲線は、滑らかな曲線をいくつかつなげたものだから、
+:math:`C` が一つの滑らかな曲線であると見なして、定理が成り立つことを示せば十分である。
+まず、合成関数の微分法 :math:`\frac{d}{dt} F(z(t)) = F'(z(t)) z'(t)` が成り立つことを示す。
+
+:math:`F(z) = U(x, y) + iV(x, y), \quad z(t) = x(t) + iy(t)` とおくと、
+
+.. math::
+    F(z(t)) &= U(x(t), y(t)) + iV(x(t), y(t)) \\
+    \therefore \frac{d}{dt} F(z(t)) &= \frac{d}{dt} U(x(t), y(t)) + i \frac{d}{dt} V(x(t), y(t)) \\
+    &= U_x x' + U_y y' + i(V_x x' + V_y y') \quad (\text{合成関数の連鎖律}) \\
+    &= U_x x' - V_x y' + i(V_x x' + U_x y') \quad (\text{コーシー・リーマンの方程式より}) \\
+    &= (U_x + iV_x)(x' + iy') \\
+    &= \frac{d}{dz} F(z) \cdot z'(t) \\
+    \therefore \frac{d}{dt} F(z(t)) &= f(z(t)) z'(t) \quad (\because \frac{d}{dz} F(z) = f(z))
+
+よって、合成関数の微分法が示された。すると、
+
+.. math::
+    \int_a^b f(z(t)) z'(t) dt &= \int_a^b \{ F(z(t)) \}' dt \\
+    &= \int_a^b \{ \text{Re } F(z(t)) \}' dt + i \int_a^b \{ \text{Im } F(z(t)) \}' dt \\
+    &= [\text{Re } F(z(t))]_a^b + i[\text{Im } F(z(t))]_a^b \quad (\text{実部、虚部に対してはこれまでの実関数の性質が成り立つ}) \\
+    &= \text{Re } F(z(b)) - \text{Re } F(z(a)) + i \text{Im } F(z(b)) - i \text{Im } F(z(a)) \\
+    &= \{ \text{Re } F(z(b)) + i \text{Im } F(z(b)) \} - \{ \text{Re } F(z(a)) + i \text{Im } F(z(a)) \} \\
+    &= F(z(b)) - F(z(a))
+
+線積分の積分の値は曲線、すなわち、積分路 :math:`C` の終点 :math:`z(b) = z_2` と始点 :math:`z(a) = z_1` で定まり、
+:math:`C` の形には無関係であるから、
+
+.. math::
+    \int_C f(z) dz = \underbrace{\int_{z_1}^{z_2}}_{経路に依らない} f(z) dz = [F(z)]_{z_1}^{z_2} = F(z_2) - F(z_1)
+
+とかける。
 
 
 コーシーの積分公式
@@ -402,9 +506,6 @@
 .. math::
     \int_C \frac{f(z)}{z - z_0} dz = 2 \pi i f(z_0)
 
-
-
-
-
-
+この関係を用いることで、線積分の値を実際に計算することなく、また、原始関数も用いることなく、
+積分の値を計算することが可能である。
 
