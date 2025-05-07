@@ -253,9 +253,12 @@
     * 点 :math:`z_0` が :math:`S` の内点でも外点でもない場合、 :math:`z_0` は :math:`S` の **境界点** という。
     * :math:`S` の境界点全体を :math:`S` の **境界** という。
 
-    .. image:: ./images/interior-summary.png
+    .. figure:: ./images/interior-summary.png
+        :name: interior-exterior-inter
         :scale: 30%
         :align: center
+
+        内点、外点、境界点
 
     * 境界点を含まない集合を **開集合** という。
     * 境界点をすべて含む集合を **閉集合** という。
@@ -330,9 +333,12 @@
     
     グリーンの定理は、線積分（左辺）と面積分（右辺）をつなぐものである。
 
-    .. image:: ./images/green_theorem.png
+    .. figure:: ./images/green_theorem.png
+        :name: green_theorem
         :scale: 60%
         :align: center
+
+        ジョルダン曲線 C と領域 R
 
     次のように示すことができる。
     まず、閉曲線 :math:`C` を二つの部分 :math:`C_1, C_2` に分け、
@@ -425,8 +431,11 @@
 となり、これは積分路の変形原理と呼ばれる。 :math:`C_1` を連続的に変形して :math:`C` に近づけていっても、
 積分の値は常に不変であることを示している。
 
-.. image:: ./images/Cauchy-Goursat.png
-        :align: center
+.. figure:: ./images/Cauchy-Goursat.png
+    :name: Cauchy-Goursat
+    :align: center
+
+    積分路の変形
 
 
 原始関数と線積分
@@ -508,4 +517,117 @@
 
 この関係を用いることで、線積分の値を実際に計算することなく、また、原始関数も用いることなく、
 積分の値を計算することが可能である。
+
+
+級数
+------------------------------------
+
+ここでは複素数の級数について考える。
+複素数の場合も実数と同様に、極限や発散、収束などの概念を考えることができる。
+複素数列では、次のように実部と虚部のそれぞれが収束するとき、複素数列が収束するという。
+
+.. math::
+    z_n = x_n + iy_n \quad (n=1, 2, ...), \quad z = x + iy
+
+のとき
+
+.. math::
+    \lim_{n \to \infty} z_n = z \Longleftrightarrow \lim_{n \to \infty} x_n = x, \lim_{n \to \infty} y_n = y
+
+
+そして、複素数の級数
+
+.. math::
+    \sum_{n=1}^\infty z_n = z_1 + z_2 + z_3 + ... + z_n + ...
+
+が :math:`S` に収束するとは、
+
+.. math::
+    S_N = \sum_{n=1}^N z_n = z_1 + z_2 + ... + z_N
+
+の作る数列 :math:`{S_N}` が収束することである。
+:math:`S_N` を第 :math:`N` 部分和、 :math:`S` をこの級数の和といい、
+
+.. math::
+    \sum_{n=1}^\infty z_n = S
+
+と書く。
+数列の場合と同様にして、級数が収束するのは、実部の級数、虚部の級数がそれぞれ
+級数の和の実部、虚部に収束するときである。
+
+級数では **余り** という概念がある。次の :math:`\rho_N` を余りという。
+:math:`\lim_{N \to \infty} \sum_{n=1}^N z_n = S` のとき、
+
+.. math::
+    S = \underbrace{\sum_{n=1}^N z_n}_{第 N 部分和} + \underbrace{\sum_{n=N+1}^\infty z_n}_{それ以降の級数} = S_N + \rho_N
+
+と書くと、 :math:`N \to \infty` のとき :math:`S_N \to S \Longleftrightarrow \rho_N \to 0` であるから、
+**無限級数が収束するための必要十分条件は、余りが 0 に収束する** ことであるといえる。
+
+
+Taylor 展開 と Laurent 展開
+------------------------------------
+
+実数の場合と同様に、Taylor 展開についても複素数を対象に定義することができる。
+複素数の Taylor の定理は次のとおりである。
+
+中心が :math:`z_0` 、半径が :math:`R` の円 :math:`C` の内部で **関数** :math:`f(z)` **が正則である** とき、
+:math:`C` 内の点 :math:`z` において :math:`f(z)` は
+
+.. math::
+    f(z) = f(z_0) + \frac{f'(z_0)}{1!} (z - z_0) + \frac{f''(z_0)}{2!} (z - z_0)^2 + ...
+    + \frac{f^{(n)} (z_0)}{n!} (z - z_0)^n + ...
+
+の形でのべき級数に展開できる。すなわち、右辺のべき級数は :math:`|z - z_0| < R` なる :math:`z` に対して収束し、
+その極限は :math:`f(z)` に等しい。
+
+特に、 :math:`z_0 = 0` のとき、マクローリン展開（級数）という。
+
+他方、関数 :math:`f(z)` が :math:`z = z_0` で正則でないときは Taylor の定理を適用できない（ :math:`z_0` で微分できないので）。
+しかし、 :math:`z - z_0` **の正のべきと負のべきを含む級数の形でならば表すことができる** 。
+これを一般に述べたものが Laurent の定理である。
+
+点 :math:`z_0` を中心とする二つの同心円 :math:`C_0, C_1` （半径はそれぞれ :math:`R_0, R_1` ） は
+正の向きを持つとする。関数 :math:`f(z)` が :math:`C_0` 上、 :math:`C_1` 上、および :math:`C_0` と
+:math:`C_1` の間の円環領域において正則であるとき、この円環領域の中の任意の点 :math:`z` において、
+:math:`f(z)` は次の形に表される。
+
+.. math::
+    f(z) &= \sum_{n=0}^\infty \underbrace{a_n}_{C_1 に関する積分} (z - z_0)^n + \sum_{n=1}^\infty \underbrace{b_n}_{C_0 に関する積分} \frac{1}{(z - z_0)^n} \\
+    a_n &= \frac{1}{2 \pi i} \int_{C_1} \frac{f(z)}{(z - z_0)^{n+1}} dz \\
+    b_n &= \frac{1}{2 \pi i} \int_{C_0} \frac{f(z)}{(z - z_0)^{-n+1}} dz
+
+:math:`a_n, b_n` は次のコーシーの微積分公式の形となっている。
+（正確には :math:`f^{(n)}` を :math:`n!` でわったもの）
+
+.. math::
+    f^{(n)} (z_0) = \frac{n!}{2 \pi i} \int_C \frac{f(z)}{(z - z_0)^{n+1}} dz
+
+なので Taylor 展開との対比を意識すると次のように書き直せる。
+
+.. math::
+    f(z) &= \underbrace{\sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!} (z - z_0)^n}_{Taylor 展開の部分} + \underbrace{\sum_{n=1}^\infty b_n \frac{1}{(z - z_0)^n}}_{主要部} \\
+
+
+.. figure:: ./images/Laurent_expand.jpg
+    :name: Laurent_expand
+    :scale: 50%
+    :align: center
+
+    円環領域
+
+
+関数 :math:`f(z)` が :math:`C_1` 上と :math:`C_1` の内部のすべての点（ :math:`z_0` においても）で正則であるときは、
+:math:`b_n` の被積分関数 :math:`f(z) / (z - z_0)^{-n+1}` も正則となるので、
+コーシー（グルサー）の定理から積分値は0となる。
+よって、 :math:`b_n` は 0 なので :math:`f(z)` は :math:`a_n` だけの項となり、 Taylor 展開の式に一致する。
+
+また、 :math:`R_0 \leq |z - z_0| \leq R_1` において、 :math:`a_n, b_n` の被積分関数はともに正則であるから、
+この円環領域内の正方向をもつ任意のジョルダン曲線 :math:`C` を積分路 :math:`C_0, C_1` の代わりに用いても、
+積分の値は変わらない。したがって、Laurent 展開は次のように書ける。
+
+.. math::
+    f(z) &= \sum_{n = -\infty}^\infty c_n (z - z_0)^n \quad (R_0 < |z - z_0| < R_1) \\
+    c_n &= \frac{1}{2 \pi i} \underbrace{\int_C}_{積分路は C } \frac{f(z)}{(z - z_0)^{n+1}} dz
+
 
