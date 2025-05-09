@@ -12,5 +12,6 @@ docs/_sources/*
 docs/_static/*
 docs/.doctrees/*
 docs/.*
+!docs/.nojekyll
 docs/objects.inv
 
