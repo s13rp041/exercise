@@ -1,0 +1,749 @@
+
+
+<!DOCTYPE html>
+<html class="writer-html5" lang="ja" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>複素関数 &mdash; 大学院入試問題 解答例と解説  ドキュメント</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=b86133f3" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/theme.css?v=e59714d7" />
+
+  
+      <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+      <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+      <script src="../../../_static/documentation_options.js?v=c033477b"></script>
+      <script src="../../../_static/doctools.js?v=9bcbadda"></script>
+      <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+      <script src="../../../_static/translations.js?v=4755f45a"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="検索" href="../../../search.html" />
+    <link rel="next" title="物理" href="../../physics/index.html" />
+    <link rel="prev" title="(TBD) 線形代数" href="../linear_algebra/index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            大学院入試問題 解答例と解説
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" aria-label="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="Navigation menu">
+              <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../university/index.html">対象とする大学院</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../../index.html">分野のまとめ</a><ul class="current">
+<li class="toctree-l2 current"><a class="reference internal" href="../index.html">数学</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="../linear_algebra/index.html">(TBD) 線形代数</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">複素関数</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">複素関数のイメージ</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">コーシー・リーマンの方程式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">正則関数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id5">線積分</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">コーシーの積分定理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id7">コーシー・グルサーの定理</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id8">原始関数と線積分</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id9">コーシーの積分公式</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id10">級数</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#taylor-laurent">Taylor 展開 と Laurent 展開</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id11">留数定理</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../physics/index.html">物理</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="Mobile navigation menu" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">大学院入試問題 解答例と解説</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="Page navigation">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../../index.html">分野のまとめ</a></li>
+          <li class="breadcrumb-item"><a href="../index.html">数学</a></li>
+      <li class="breadcrumb-item active">複素関数</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/knowledge/math/complex_function/index.rst.txt" rel="nofollow"> View page source</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="id1">
+<h1>複素関数<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
+<section id="id2">
+<h2>複素関数のイメージ<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>実数値の関数のグラフは、これまで意識することなく描いてきたように、
+（1変数関数であれば） <span class="math notranslate nohighlight">\(xy\)</span> 平面上にグラフ <span class="math notranslate nohighlight">\(f(x)\)</span> を描画することができる。
+しかし、これと異なり、複素数値の関数のグラフは一つの平面上に表すことはできない。
+複素関数 <span class="math notranslate nohighlight">\(f(z) \quad (z = x + iy)\)</span> は二つの変数 <span class="math notranslate nohighlight">\(x, y\)</span> で表され、
+変換後の値（複素数） <span class="math notranslate nohighlight">\(w = f(z)\)</span> も二つの変数 <span class="math notranslate nohighlight">\(u(x, y), v(x, y)\)</span> で表されるので、
+4次元となるため、一つの平面上でグラフを表現することは難しい。
+なので、通常は変換前の複素数平面 <span class="math notranslate nohighlight">\(z\)</span> と変換後の複素数平面 <span class="math notranslate nohighlight">\(w\)</span> を考え、
+もとの平面上の座標や図形がどのように変換されるかを追うことで、関数について知ることができる。</p>
+<p>例えば、次の関数（変換）により、座標や図形がどのように変換されるかを考えてみる。</p>
+<div class="math notranslate nohighlight">
+\[w = z + \frac{1}{z}\]</div>
+<p>座標や図形としては、 <span class="math notranslate nohighlight">\(z\)</span> 平面上で半径1の円、半径 <span class="math notranslate nohighlight">\(r\)</span> の円、および <span class="math notranslate nohighlight">\(x\)</span> 軸上の線分を対象にすることとする。</p>
+<p>まず、 <span class="math notranslate nohighlight">\(x\)</span> 軸上の線分について調べてみる。
+<span class="math notranslate nohighlight">\(z\)</span> 平面上の <span class="math notranslate nohighlight">\(x\)</span> 軸上の点 (1, 0) を考えると、
+これは <span class="math notranslate nohighlight">\(z = 1\)</span> なので <span class="math notranslate nohighlight">\(w\)</span> は <span class="math notranslate nohighlight">\(w = 1 + \frac{1}{1} = 2\)</span> となる。
+なので、<span class="math notranslate nohighlight">\(w\)</span> 平面上では点 (2, 0) に移ることとなる。</p>
+<p>次に <span class="math notranslate nohighlight">\(x\)</span> 軸上で <span class="math notranslate nohighlight">\(x &gt; 1\)</span> の半直線を調べよう。
+このとき <span class="math notranslate nohighlight">\(z = x\)</span> なので <span class="math notranslate nohighlight">\(w = x + \frac{1}{x}\)</span> に移る。
+<span class="math notranslate nohighlight">\(x &gt; 1\)</span> を考えているので <span class="math notranslate nohighlight">\(w &gt; 2\)</span> である。
+微分すると <span class="math notranslate nohighlight">\(\frac{dw}{dx} = 1 - \frac{1}{x^2} &gt; 0 (x &gt; 1)\)</span> なので、
+<span class="math notranslate nohighlight">\(z\)</span> 平面上で <span class="math notranslate nohighlight">\(x\)</span> が大きくなる方向へ移動すると、
+<span class="math notranslate nohighlight">\(w\)</span> 平面上でも <span class="math notranslate nohighlight">\(u\)</span> が大きくなる方向へ移動することがわかる。</p>
+<p>次に半径1の半円を調べてみる。
+半径1の半円は <span class="math notranslate nohighlight">\(z = e^{i \theta}, (0 \leq \theta \leq \pi)\)</span> と表せる。
+なので <span class="math notranslate nohighlight">\(w = e^{i \theta} + e^{-i \theta} = 2 \cos \theta\)</span> となり、
+取りうる値の範囲は <span class="math notranslate nohighlight">\(-2 \leq w(= 2 \cos \theta) \leq 2\)</span> である。
+したがって、 <span class="math notranslate nohighlight">\(z\)</span> 平面上での半円は <span class="math notranslate nohighlight">\(w\)</span> 平面上では <span class="math notranslate nohighlight">\(x\)</span> 軸上の線分に移る。
+<span class="math notranslate nohighlight">\(z\)</span> 平面上で <span class="math notranslate nohighlight">\(\theta\)</span> が 0 のとき <span class="math notranslate nohighlight">\(w\)</span> 平面上では <span class="math notranslate nohighlight">\(x\)</span> が最大となり、
+<span class="math notranslate nohighlight">\(\theta\)</span> が大きくなるにつれて <span class="math notranslate nohighlight">\(x\)</span> は小さくなる方向に移動していくことがわかる。</p>
+<p>最後に半径 <span class="math notranslate nohighlight">\(r_0\)</span> の半円がどのように移るかを考えよう。
+この半円は <span class="math notranslate nohighlight">\(z = r_0 e^{i \theta}\)</span> と表せるので、
+<span class="math notranslate nohighlight">\(w = r_0 e^{i \theta} + \frac{1}{r_0 e^{i \theta}}\)</span> となる。
+これは次のように変形できる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}w &amp;= r_0 e^{i \theta} + r_0^{-1} e^{-i \theta} \\
+  &amp;= (r_0 + r_0^{-1}) \cos \theta + i(r_0 - r_0^{-1}) \sin \theta \\
+  &amp;= a \cos \theta + i b \sin \theta \quad (a = r_0 + r_0^{-1}, b = r_0 - r_0^{-1}) \\
+(\frac{u}{a})^2 + (\frac{v}{b})^2 &amp;= 1\end{split}\]</div>
+<p>これは焦点が <span class="math notranslate nohighlight">\(w = \pm \sqrt{a^2 - b^2} = \pm 2\)</span> の楕円である。</p>
+<p>以上のように、各座標や図形について関数 <span class="math notranslate nohighlight">\(f(z)\)</span> によってどのように変換されるかを
+調べることで、その関数の概要を知ることが可能である。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>楕円の式</p>
+<p>楕円とは、2定点からの距離の和が一定となるような平面上の点の軌跡である。
+この定点のことを焦点という。
+楕円の中心を原点としたデカルト座標 <span class="math notranslate nohighlight">\(X, Y\)</span> では楕円は次のように表される。</p>
+<div class="math notranslate nohighlight">
+\[\frac{X^2}{a^2} + \frac{Y^2}{b^2} = 1\]</div>
+<p>これは以下のようにして導かれる。
+まず、2つの焦点を <span class="math notranslate nohighlight">\(X\)</span> 軸上におき、<span class="math notranslate nohighlight">\(F(c, 0), F'(-c, 0) \quad (c &gt; 0)\)</span> とする。
+点 <span class="math notranslate nohighlight">\(P\)</span> の座標を <span class="math notranslate nohighlight">\((X, Y)\)</span> とすると</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}PF + PF' &amp;= const. = 2a \quad (\text{これは楕円の定義より}) \\
+\sqrt{(X -c)^2 + Y^2} + \sqrt{(X + c)^2 + Y^2} &amp;= 2a \\
+(X + c)^2 + Y^2 &amp;= \{2a - \sqrt{(X - c)^2 + Y^2}\}^2 \\
+&amp;= 4a^2 -4a \sqrt{(X - c)^2 + Y^2} + (X - c)^2 + Y^2 \\
+\sqrt{(X - c)^2 + Y^2} &amp;= a - \frac{c}{a} X \\
+(X - c)^2 + Y^2 &amp;= a^2 -2cX + \frac{c^2}{a^2} X^2 \\
+(1 - \frac{c^2}{a^2}) X^2 + Y^2 &amp;= a^2 - c^2 \\
+\frac{X^2}{a^2} + \frac{Y^2}{a^2 - c^2} &amp;= 1\end{split}\]</div>
+<p>ここで <span class="math notranslate nohighlight">\(b^2 = a^2 - c^2\)</span> とおけば</p>
+<div class="math notranslate nohighlight">
+\[\frac{X^2}{a^2} + \frac{Y^2}{b^2} = 1\]</div>
+<p>となり、楕円の式を得る。</p>
+</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p><span class="math notranslate nohighlight">\(\epsilon - \delta\)</span> 論法</p>
+<p>（TBD）</p>
+</div>
+</section>
+<section id="id3">
+<h2>コーシー・リーマンの方程式<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>複素関数における重要な式の一つに、コーシー・リーマンの方程式がある。
+これは関数 <span class="math notranslate nohighlight">\(f(z) = u(x, y) + iv(x, y)\)</span> が微分可能であるとき、
+<span class="math notranslate nohighlight">\(u, v\)</span> の偏導関数の間に成り立つ関係を述べたものである。
+この方程式は関数 <span class="math notranslate nohighlight">\(f(z)\)</span> の微分可能性ともかかわっている。</p>
+<p>コーシー・リーマンの方程式は次である。</p>
+<hr class="docutils" />
+<p>関数 <span class="math notranslate nohighlight">\(f(z) = u(x, y) + iv(x, y)\)</span> が <span class="math notranslate nohighlight">\(z_0 = x_0 + iy_0\)</span> で微分可能であるとき、
+次の関係をコーシー・リーマンの方程式という。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_x (x_0, y_0) &amp;= v_y (x_0, y_0) \\
+u_y (x_0, y_0) &amp;= -v_x (x_0, y_0) \\\end{split}\]</div>
+<hr class="docutils" />
+<p>これは以下のようにして導くことができる。
+いま、 <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(z_0 = x_0 + iy_0\)</span> で微分可能としているので、次の極限が存在する。</p>
+<div class="math notranslate nohighlight">
+\[f'(z_0) = \lim_{\varDelta z \to 0} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}\]</div>
+<p>複素数の極限が存在するとき、実部、虚部それぞれで極限をとったものと同値なので、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Re} f'(z_0) &amp;= \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Re} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z} \\
+\text{Im} f'(z_0) &amp;= \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Im} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}\end{split}\]</div>
+<p>が成り立つ。
+そして次の変化量を計算する。</p>
+<div class="math notranslate nohighlight">
+\[\frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}
+= \frac{{u(x_0 + \varDelta x, y_0 + \varDelta y) - u(x_0, y_0)} + i{v(x_0 + \varDelta x, y_0 + \varDelta y) - v(x_0, y_0)}}{\varDelta x + i \varDelta y}\]</div>
+<p>極限はただ一つなので、いかなる方向から <span class="math notranslate nohighlight">\(\varDelta z \to 0\)</span> としても常に一つの値 <span class="math notranslate nohighlight">\(f'(z_0)\)</span> が定まる。
+同様に <span class="math notranslate nohighlight">\(Re f'(z_0), Im f'(z_0)\)</span> の式についてもどのような向きから極限をとっても値は一つ（<span class="math notranslate nohighlight">\(Re f'(z_0), Im f'(z_0)\)</span>）に定まる。
+そこで、特に <span class="math notranslate nohighlight">\(\varDelta y = 0\)</span> とし、 <span class="math notranslate nohighlight">\(\varDelta x \to 0\)</span> としても（つまり、実軸に沿って 0 に近づいても）極限の値は変わらないから、
+上式で <span class="math notranslate nohighlight">\(\varDelta y = 0\)</span> とすると</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z}
+&amp;= \frac{{u(x_0 + \varDelta x, y_0) - u(x_0, y_0)} + i{v(x_0 + \varDelta x, y_0) - v(x_0, y_0)}}{\varDelta x} \\
+&amp;= \frac{u(x_0 + \varDelta x, y_0) - u(x_0, y_0)}{\varDelta x} + i \frac{v(x_0 + \varDelta x, y_0) - v(x_0, y_0)}{\varDelta x}\end{split}\]</div>
+<p>よって、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Re} f'(z_0) &amp;= \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Re} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z} \\
+&amp;= \lim_{\varDelta x \to 0} \frac{u(x_0 + \varDelta x, y_0) - u(x_0, y_0)}{\varDelta x} \\
+&amp;= u_x(x_0, y_0)\end{split}\]</div>
+<p>同様に</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{Im} f'(z_0) &amp;= \lim_{(\varDelta x, \varDelta y) \to (0, 0)} \text{Im} \frac{f(z_0 + \varDelta z) - f(z_0)}{\varDelta z} \\
+&amp;= \lim_{\varDelta x \to 0} \frac{v(x_0 + \varDelta x, y_0) - v(x_0, y_0)}{\varDelta x} \\
+&amp;= v_x(x_0, y_0)\end{split}\]</div>
+<p>よって、</p>
+<div class="math notranslate nohighlight">
+\[f'(z_0) = u_x(x_0, y_0) + iv_x(x_0, y_0)\]</div>
+<p>が成り立つ。
+先ほどは <span class="math notranslate nohighlight">\(\varDelta y = 0\)</span> としてが、 <span class="math notranslate nohighlight">\(\varDelta x = 0\)</span> とすることで、
+同様の方法で次の関係式が導かれる。</p>
+<div class="math notranslate nohighlight">
+\[f'(z_0) = v_y(x_0, y_0) - iu_y(x_0, y_0)\]</div>
+<p><span class="math notranslate nohighlight">\(f'(z_0)\)</span> はただ一つの値なので、これが一致するのはすなわち、実部と虚部がそれぞれ一致するときなので、
+次の関係式、つまり、コーシー・リーマンの方程式が成り立つ。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}u_x(x_0, y_0) &amp;= v_y(x_0, y_0) \\
+v_x(x_0, y_0) &amp;= -u_y(x_0, y_0)\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>合成関数の微分</p>
+<p>はじめに1変数関数の連鎖律を見る。
+<span class="math notranslate nohighlight">\(z = f(x, y)\)</span> が全微分可能で <span class="math notranslate nohighlight">\(x = x(t), y = y(t)\)</span> が微分可能であるとき、
+合成関数 <span class="math notranslate nohighlight">\(z = f(x(t), y(t))\)</span> は <span class="math notranslate nohighlight">\(t\)</span> の関数として微分可能で次が成り立つ。</p>
+<div class="math notranslate nohighlight">
+\[\frac{dz}{dt} = \frac{\partial f}{\partial x} \frac{dx}{dt} + \frac{\partial f}{\partial y} \frac{dy}{dt}\]</div>
+<p>2変数関数も同様に考えることができる。 <span class="math notranslate nohighlight">\(z = f(x, y), x = x(u, v), y = y(u, v)\)</span> のとき、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\partial z}{\partial u} &amp;= \frac{\partial f}{\partial x} \frac{\partial x}{\partial u}
++ \frac{\partial f}{\partial y} \frac{\partial y}{\partial u} \\
+\frac{\partial z}{\partial v} &amp;= \frac{\partial f}{\partial x} \frac{\partial x}{\partial v}
++ \frac{\partial f}{\partial y} \frac{\partial y}{\partial v}\end{split}\]</div>
+<p>（参考）https://www2.math.kyushu-u.ac.jp/~hara/lectures/12/biseki1213b.pdf</p>
+</div>
+<p>微分可能性についてみるため、次の関数を考えてみる。</p>
+<div class="math notranslate nohighlight">
+\[f(z) = |z^2|\]</div>
+<p>変化量は次のように計算できる。</p>
+<div class="math notranslate nohighlight">
+\[\frac{\varDelta w}{\varDelta z} = \frac{|z + \varDelta z|^2 - |z^2|}{\varDelta z}
+= \frac{(z + \varDelta z)(\bar{z} + \bar{\varDelta z}) - z \bar{z}}{\varDelta z} = \bar{z} + \bar{\varDelta z} + z \frac{\bar{\varDelta z}}{\varDelta z}\]</div>
+<p>これより、 <span class="math notranslate nohighlight">\(z = 0\)</span> においては、 <span class="math notranslate nohighlight">\(\varDelta w / \varDelta z = \bar{\varDelta z}\)</span> となる。
+よって、極限が存在、つまり、微分可能でその値は <span class="math notranslate nohighlight">\(f'(0) = \lim_{\varDelta z \to 0} \bar{\varDelta z} = 0\)</span> である。</p>
+<p>一方、 <span class="math notranslate nohighlight">\(z \neq 0\)</span> の場合は少し異なる。
+変化量 <span class="math notranslate nohighlight">\(\varDelta z\)</span> が <span class="math notranslate nohighlight">\(\varDelta z = \bar{\varDelta z}\)</span> の場合、すなわち、 <span class="math notranslate nohighlight">\(\varDelta z\)</span> が実数の場合、
+<span class="math notranslate nohighlight">\(\varDelta w / \varDelta z = \bar{z} + \varDelta z + z\)</span> となるので、</p>
+<div class="math notranslate nohighlight">
+\[\frac{\varDelta w}{\varDelta z} \overset{\varDelta z \to 0}{=} \bar{z} + z\]</div>
+<p>となる。他方、 <span class="math notranslate nohighlight">\(\varDelta z = - \bar{\varDelta z}\)</span> の場合、
+つまり、純虚数の場合は <span class="math notranslate nohighlight">\(\varDelta w / \varDelta z = \bar{z} - \varDelta z - z\)</span> なので、</p>
+<div class="math notranslate nohighlight">
+\[\frac{\varDelta w}{\varDelta z} \overset{\varDelta z \to 0}{=} \bar{z} - z\]</div>
+<p>したがって、これら二つ（ <span class="math notranslate nohighlight">\(\varDelta z\)</span> が実数か純虚数か）で極限が異なっている。
+つまり、 0 への近づき方により極限が異なっているので、 <span class="math notranslate nohighlight">\(z \neq 0\)</span> では <span class="math notranslate nohighlight">\(\varDelta z \to 0\)</span> のとき
+極限は存在しない、言い換えると、 <span class="math notranslate nohighlight">\(z \neq 0\)</span> では微分可能ではない。</p>
+<p>0 への近づき方について、次のとおり補足する。
+<span class="math notranslate nohighlight">\(\varDelta z\)</span> が実数の場合、 <span class="math notranslate nohighlight">\(\varDelta z \to 0\)</span> は複素平面上で実軸に沿って
+原点方向へ近づくこととなる。他方、純虚数の場合は、虚軸に沿って原点方向へ近づくので、
+これらは原点への近づき方が異なっている。
+異なる方向から原点に近づいたとき、極限 <span class="math notranslate nohighlight">\(\lim_{\varDelta z \to 0} f'(z_0)\)</span> は異なる値をとるので、
+これは微分可能ではない。</p>
+</section>
+<section id="id4">
+<h2>正則関数<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>点 <span class="math notranslate nohighlight">\(z_0\)</span> のみならず <span class="math notranslate nohighlight">\(z_0\)</span> のある近傍の各点において <span class="math notranslate nohighlight">\(f(z)\)</span> が <strong>微分可能</strong> であるとき、
+<span class="math notranslate nohighlight">\(f(z)\)</span> は <span class="math notranslate nohighlight">\(z_0\)</span> で <strong>正則</strong> であるという。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>内点、外点、境界と開集合、閉集合</p>
+<ul class="simple">
+<li><p>点 <span class="math notranslate nohighlight">\(z_0\)</span> を中心として半径 <span class="math notranslate nohighlight">\(\varepsilon\)</span> の円の内部の点全体 <span class="math notranslate nohighlight">\(|z - z_0| &lt; \varepsilon\)</span> を <span class="math notranslate nohighlight">\(z_0\)</span> の <span class="math notranslate nohighlight">\(\varepsilon\)</span> 近傍という。</p></li>
+<li><p>点 <span class="math notranslate nohighlight">\(z_0\)</span> のある近傍が集合 <span class="math notranslate nohighlight">\(S\)</span> の点のみを含むとき、 <span class="math notranslate nohighlight">\(z_0\)</span> は <span class="math notranslate nohighlight">\(S\)</span> の <strong>内点</strong> という。</p></li>
+<li><p>点 <span class="math notranslate nohighlight">\(z_0\)</span> の近傍で <span class="math notranslate nohighlight">\(S\)</span> の点を含まないものがある場合、 <span class="math notranslate nohighlight">\(z_0\)</span> を <span class="math notranslate nohighlight">\(S\)</span> の <strong>外点</strong> という。</p></li>
+<li><p>点 <span class="math notranslate nohighlight">\(z_0\)</span> が <span class="math notranslate nohighlight">\(S\)</span> の内点でも外点でもない場合、 <span class="math notranslate nohighlight">\(z_0\)</span> は <span class="math notranslate nohighlight">\(S\)</span> の <strong>境界点</strong> という。</p></li>
+<li><p><span class="math notranslate nohighlight">\(S\)</span> の境界点全体を <span class="math notranslate nohighlight">\(S\)</span> の <strong>境界</strong> という。</p></li>
+</ul>
+<figure class="align-center" id="interior-exterior-inter">
+<a class="reference internal image-reference" href="../../../_images/interior-summary.png"><img alt="../../../_images/interior-summary.png" src="../../../_images/interior-summary.png" style="width: 451.8px; height: 274.8px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">図 1 </span><span class="caption-text">内点、外点、境界点</span><a class="headerlink" href="#interior-exterior-inter" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<ul class="simple">
+<li><p>境界点を含まない集合を <strong>開集合</strong> という。</p></li>
+<li><p>境界点をすべて含む集合を <strong>閉集合</strong> という。</p></li>
+</ul>
+</div>
+</section>
+<section id="id5">
+<h2>線積分<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p>複素数 <span class="math notranslate nohighlight">\(z\)</span> の複素数値関数 <span class="math notranslate nohighlight">\(f(z)\)</span> の積分について考える。
+積分路を表す曲線 <span class="math notranslate nohighlight">\(C\)</span> を次の関数で定める。</p>
+<div class="math notranslate nohighlight">
+\[C: z(t) = x(t) + i y(t) \quad (a \leq t \leq b)\]</div>
+<p>関数 <span class="math notranslate nohighlight">\(f(z) = u(x, y) + iv(x, y)\)</span> は <span class="math notranslate nohighlight">\(C\)</span> 上で区分的に連続な関数とする。
+このとき、<span class="math notranslate nohighlight">\(C\)</span> に沿う <span class="math notranslate nohighlight">\(f(z)\)</span> の線積分を次で定義する。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\underbrace{\int_C f(z) dz}_{\text{線分 C 上の関数 f(z) の値を足し合わせたもの}} &amp;= \int_a^b f(z(t)) z'(t) dt \\
+z'(t) dt &amp;= \frac{dz}{dt} dt = dz\end{split}\]</div>
+<p>上式の右辺は次のように展開できる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\text{右辺} &amp;= \int_a^b (u + iv)(x' + iy') dt \\
+&amp;= \int_a^b (ux' - vy') dt + i \int_a^b (vx' + uy') dt \\
+&amp;= \int_C udx - vdy + i \int_C vdx + udy\end{split}\]</div>
+<p>よって、以下のように書ける（定義から以下が導かれる）。</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = \int_C udx - vdy + i \int_C vdx + udy\]</div>
+<p>これは <span class="math notranslate nohighlight">\(f(z) = u + iv, dz = dx + idy\)</span> とおいて、次のように
+形式的な計算を行ったものと同じ形をしている（つまり、 <strong>形式的な計算の結果が定義から導かれるものと一致</strong> している）。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_C f(z) dz &amp;= \int_C (u + iv) (dx + idy) \\
+&amp;= \int_C (udx - vdy) + i(vdx + udy) \\
+&amp;= \int_C udx - vdy + i \int_C vdx + udy\end{split}\]</div>
+<p>次の例を考える。
+<span class="math notranslate nohighlight">\(C_1\)</span> が2点 <span class="math notranslate nohighlight">\(z=0\)</span> と <span class="math notranslate nohighlight">\(z=2+i\)</span> を結ぶ線分であるとき、
+積分 <span class="math notranslate nohighlight">\(I_1 = \int_{C_1} z^2 dz\)</span> の値を求める。</p>
+<p><span class="math notranslate nohighlight">\(C_1\)</span> は直線 <span class="math notranslate nohighlight">\(y = x/2\)</span> 上にあるから、 <span class="math notranslate nohighlight">\(y = t\)</span> とおくと
+<span class="math notranslate nohighlight">\(x = 2t\)</span> だから</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}C_1: z &amp;= z(t) = 2t + it \quad (0 \leq t \leq 1) \\
+z'(t) &amp;= 2 + i\end{split}\]</div>
+<p><span class="math notranslate nohighlight">\(C_1\)</span> 上における <span class="math notranslate nohighlight">\(z^2\)</span> の値は</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}z^2 &amp;= (x + iy)^2 = (2t + it)^2 = (2 + i)^2 t^2 = (3 + 4i) t^2 \\
+I_1 &amp;= \int_0^1 (3 + 4i) t^2 (2 + i) dt = (3 + 4i) (2 + i) \int_0^1 t^2 dt \\
+    &amp;= \frac{2}{3} + \frac{11}{3} i\end{split}\]</div>
+</section>
+<section id="id6">
+<h2>コーシーの積分定理<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>グリーンの定理</p>
+<p><span class="math notranslate nohighlight">\(xy\)</span> 平面で単一閉曲線（ジョルダン曲線） <span class="math notranslate nohighlight">\(C\)</span> で囲まれた領域を <span class="math notranslate nohighlight">\(R\)</span> とする。
+二つの関数 <span class="math notranslate nohighlight">\(M(x, y), N(x, y)\)</span> が <span class="math notranslate nohighlight">\(C\)</span> と <span class="math notranslate nohighlight">\(R\)</span> を含む領域で連続な偏導関数
+をもっているとする。また、閉曲線 <span class="math notranslate nohighlight">\(C\)</span> には図のような向きがついているとする。
+このとき次の等式が成り立つ（グリーンの定理）。</p>
+<div class="math notranslate nohighlight">
+\[\int_C (M dx + N dy) = \int \int_R (\frac{\partial N}{\partial x} - \frac{\partial M}{\partial y}) dx dy\]</div>
+<p>グリーンの定理は、線積分（左辺）と面積分（右辺）をつなぐものである。</p>
+<figure class="align-center" id="green-theorem">
+<a class="reference internal image-reference" href="../../../_images/green_theorem.png"><img alt="../../../_images/green_theorem.png" src="../../../_images/green_theorem.png" style="width: 313.2px; height: 285.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">図 2 </span><span class="caption-text">ジョルダン曲線 C と領域 R</span><a class="headerlink" href="#green-theorem" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>次のように示すことができる。
+まず、閉曲線 <span class="math notranslate nohighlight">\(C\)</span> を二つの部分 <span class="math notranslate nohighlight">\(C_1, C_2\)</span> に分け、
+これらの曲線（弧）の方程式をそれぞれ <span class="math notranslate nohighlight">\(y = Y_1(x), \quad y =Y_2(x)\)</span> とする。
+まず次の計算をする。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int \int_R \frac{\partial M}{\partial y} dx dy &amp;= \int_a^b \int_{Y_1(x)}^{Y_2(x)} \frac{\partial M}{\partial y} dy dx \\
+&amp;= \int_a^b [M(x, y)]_{y = Y_1(x)}^{y = Y_2(x)} dx \\
+&amp;= \int_a^b M(x, Y_2(x)) dx - \int_a^b M(x, Y_1(x)) dx \\
+&amp;= - \int_{C_2} M dx - \int_{C_1} M dx \\
+&amp;= \int_C M dx\end{split}\]</div>
+<p>同様にして、<span class="math notranslate nohighlight">\(\int \int_R \frac{\partial N}{\partial x} dx dy = \int_C N dy\)</span> となる。
+それぞれ足し合わせることでグリーンの定理の式となる。</p>
+</div>
+<p><span class="math notranslate nohighlight">\(R\)</span> 全体で正則な関数 <span class="math notranslate nohighlight">\(f(z) = u(x, y) + iv(x, y)\)</span> に対する <span class="math notranslate nohighlight">\(C\)</span> に沿う線積分は、次式となる。</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = \int_C udx - vdy + i \int_C vdx + udy\]</div>
+<p>これは <span class="math notranslate nohighlight">\(dz = dx + idy\)</span> と形式的に計算することで得られる。
+<span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(R\)</span> で連続ならば <span class="math notranslate nohighlight">\(u, v\)</span> は <span class="math notranslate nohighlight">\(R\)</span> で連続であり、
+また、<span class="math notranslate nohighlight">\(f'(z)\)</span> が <span class="math notranslate nohighlight">\(R\)</span> で連続ならば <span class="math notranslate nohighlight">\(u, v\)</span> の1階偏導関数は連続である。
+よって、グリーンの定理を使用することができ、上式は次のようになる。</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = \int \int_R (-v_x - u_y) dx dy + i \int \int_R (u_x - v_y) dx dy\]</div>
+<p>ところで、 <span class="math notranslate nohighlight">\(f(z)\)</span> は正則なので、コーシー・リーマンの方程式 <span class="math notranslate nohighlight">\(u_x = v_y, u_y = -v_x\)</span> が成り立つから、
+右辺の値は 0 となる。</p>
+<p>したがって、次の重要な定理 <strong>コーシーの積分定理</strong> を得る。</p>
+<hr class="docutils" />
+<p>区分的に滑らかなジョルダン曲線（単一閉曲線） <span class="math notranslate nohighlight">\(C\)</span> の上と内部で</p>
+<div class="math notranslate nohighlight">
+\[f(z) \text{ が正則}, f'(z) \text{ が連続ならば }
+\int_C f(z) dz = 0\]</div>
+<p>ジョルダン曲線、つまり、積分を単一閉曲線を一周すると 0 となる。</p>
+<hr class="docutils" />
+<p><span class="math notranslate nohighlight">\(f(z)\)</span> が正則でなければコーシー・リーマンの定理が成り立たず、
+また、<span class="math notranslate nohighlight">\(f'(z)\)</span> が連続でなければグリーンの定理が成り立たないので、
+いずれも必要である。
+（が、実は、グルサーの定理で示されるように <span class="math notranslate nohighlight">\(f'(z)\)</span> の連続性を取り除いてもこの式は成り立つのである。）</p>
+<p><span class="math notranslate nohighlight">\(\int_C f(z) dz = 0\)</span> であるとき <span class="math notranslate nohighlight">\(\int_{-C} f(z) dz = - \int_C f(z) = 0\)</span> であるから、
+コーシーの積分定理における <span class="math notranslate nohighlight">\(C\)</span> の向きは本質的ではなくなる。
+すなわち、正の向きでも負の向きでも無関係に積分の値は 0 である。</p>
+</section>
+<section id="id7">
+<h2>コーシー・グルサーの定理<a class="headerlink" href="#id7" title="Link to this heading"></a></h2>
+<p>区分的に滑らかなジョルダン曲線 <span class="math notranslate nohighlight">\(C\)</span> の上と内部で <span class="math notranslate nohighlight">\(f(z)\)</span> が正則ならば、
+<span class="math notranslate nohighlight">\(\int_C f(z) dz = 0\)</span> である。これをコーシー・グルサーの定理という。
+（コーシーの積分定理の条件から「 <span class="math notranslate nohighlight">\(f'(z)\)</span> が連続であること」が取り除かれた。）</p>
+<p><span class="math notranslate nohighlight">\(f'(z)\)</span> の連続性を取り除くことができることには重要な意味がある。
+この定理から、次の定理が成り立つことになる。</p>
+<hr class="docutils" />
+<p><span class="math notranslate nohighlight">\(C_1, C_2\)</span> が単連結領域 <span class="math notranslate nohighlight">\(D\)</span> 内の2点を結ぶ区分的になめらかな曲線であるとき、
+<span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(D\)</span> で正則ならば <span class="math notranslate nohighlight">\(\int_{C_1} f(z) dz = \int_{C_2} f(z) dz\)</span> である。</p>
+<hr class="docutils" />
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>ジョルダン曲線、すなわち、単一閉曲線の内部の点すべてからなる集合を <strong>単連結</strong> であるという。
+これに対して、例えば、円環 <span class="math notranslate nohighlight">\(1 &lt; |z| &lt; 2\)</span> のように単連結でない集合を <strong>多重連結</strong> であるという。</p>
+</div>
+<p>これは、単連結領域における正則関数に対しては、積分路は無関係に端点のみで積分の値が定めることを示している。</p>
+<p>多重連結の場合も、コーシー・グルサーの定理が成り立つ。
+多重連結の場合は、曲線 <span class="math notranslate nohighlight">\(C\)</span> とその内部にある曲線 <span class="math notranslate nohighlight">\(C_j (j =1, 2, ..., n)\)</span> を考える。
+各曲線はすべて滑らかなジョルダン曲線で、 <span class="math notranslate nohighlight">\(C_j\)</span> はすべて <span class="math notranslate nohighlight">\(C\)</span> の内部にあり、
+しかも、 <span class="math notranslate nohighlight">\(C_j\)</span> の内部の点は互いに共通点を持たないとする。
+<span class="math notranslate nohighlight">\(R\)</span> は <span class="math notranslate nohighlight">\(C\)</span> の内部から <span class="math notranslate nohighlight">\(C_j\)</span> の内部の点を除いた部分と
+<span class="math notranslate nohighlight">\(C\)</span> 上の点からなる集合とする。
+また、 <span class="math notranslate nohighlight">\(R\)</span> の内部が左にあるように <span class="math notranslate nohighlight">\(C\)</span> と <span class="math notranslate nohighlight">\(C_j\)</span> に向きをつけた <span class="math notranslate nohighlight">\(R\)</span> の
+境界を <span class="math notranslate nohighlight">\(B\)</span> とする（ <span class="math notranslate nohighlight">\(C\)</span> のみ反時計回り、それ以外は時計回りである）。
+このとき <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(R\)</span> で正則ならば</p>
+<div class="math notranslate nohighlight">
+\[\int_B f(z) dz = \int_C f(z) dz + \int_{C_1} f(z) dz + ... + \int_{C_n} f(z) dz = 0\]</div>
+<p>である。<span class="math notranslate nohighlight">\(C, C_1, C_2, ..., C_n\)</span> の向きがすべて同じであるとすると</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = \int_{C_1} f(z) dz + \int_{C_2} f(z) dz + ... + \int_{C_n} f(z) dz\]</div>
+<p>である。特に、 <span class="math notranslate nohighlight">\(C\)</span> の内部に <span class="math notranslate nohighlight">\(C_1\)</span> のみがある場合</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = \int_{C_1} f(z) dz\]</div>
+<p>となり、これは積分路の変形原理と呼ばれる。 <span class="math notranslate nohighlight">\(C_1\)</span> を連続的に変形して <span class="math notranslate nohighlight">\(C\)</span> に近づけていっても、
+積分の値は常に不変であることを示している。</p>
+<figure class="align-center" id="cauchy-goursat">
+<img alt="../../../_images/Cauchy-Goursat.png" src="../../../_images/Cauchy-Goursat.png" />
+<figcaption>
+<p><span class="caption-number">図 3 </span><span class="caption-text">積分路の変形</span><a class="headerlink" href="#cauchy-goursat" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="id8">
+<h2>原始関数と線積分<a class="headerlink" href="#id8" title="Link to this heading"></a></h2>
+<p>これまで、 <span class="math notranslate nohighlight">\(\int_C f(z) dz = \int_a^b f(z(t)) z'(t) dt\)</span> や
+コーシーの積分公式などから線積分の値を求められることを見てきた。
+ここでは、実関数と同様に、原始関数を使用して定積分の値を求められることを見ていく。</p>
+<p>原始関数に関して、次の定理が成り立つ。</p>
+<hr class="docutils" />
+<p><span class="math notranslate nohighlight">\(f(z)\)</span> は 領域 <span class="math notranslate nohighlight">\(D\)</span> で連続、 <span class="math notranslate nohighlight">\(F(z)\)</span> が <span class="math notranslate nohighlight">\(f(z)\)</span> の原始関数であるとき、
+<span class="math notranslate nohighlight">\(D\)</span> 内の区分的に滑らかな曲線 <span class="math notranslate nohighlight">\(C: z = z(t) \quad (a \leq t \leq b)\)</span> に沿う線積分</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = \int_a^b f(z(t)) z'(t) dt\]</div>
+<p>の値は</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = [F(z(t))]_a^b = F(z(b)) - F(z(a))\]</div>
+<p>である。</p>
+<hr class="docutils" />
+<p>これは次のようにして証明できる。</p>
+<p>区分的に滑らかな曲線は、滑らかな曲線をいくつかつなげたものだから、
+<span class="math notranslate nohighlight">\(C\)</span> が一つの滑らかな曲線であると見なして、定理が成り立つことを示せば十分である。
+まず、合成関数の微分法 <span class="math notranslate nohighlight">\(\frac{d}{dt} F(z(t)) = F'(z(t)) z'(t)\)</span> が成り立つことを示す。</p>
+<p><span class="math notranslate nohighlight">\(F(z) = U(x, y) + iV(x, y), \quad z(t) = x(t) + iy(t)\)</span> とおくと、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}F(z(t)) &amp;= U(x(t), y(t)) + iV(x(t), y(t)) \\
+\therefore \frac{d}{dt} F(z(t)) &amp;= \frac{d}{dt} U(x(t), y(t)) + i \frac{d}{dt} V(x(t), y(t)) \\
+&amp;= U_x x' + U_y y' + i(V_x x' + V_y y') \quad (\text{合成関数の連鎖律}) \\
+&amp;= U_x x' - V_x y' + i(V_x x' + U_x y') \quad (\text{コーシー・リーマンの方程式より}) \\
+&amp;= (U_x + iV_x)(x' + iy') \\
+&amp;= \frac{d}{dz} F(z) \cdot z'(t) \\
+\therefore \frac{d}{dt} F(z(t)) &amp;= f(z(t)) z'(t) \quad (\because \frac{d}{dz} F(z) = f(z))\end{split}\]</div>
+<p>よって、合成関数の微分法が示された。すると、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_a^b f(z(t)) z'(t) dt &amp;= \int_a^b \{ F(z(t)) \}' dt \\
+&amp;= \int_a^b \{ \text{Re } F(z(t)) \}' dt + i \int_a^b \{ \text{Im } F(z(t)) \}' dt \\
+&amp;= [\text{Re } F(z(t))]_a^b + i[\text{Im } F(z(t))]_a^b \quad (\text{実部、虚部に対してはこれまでの実関数の性質が成り立つ}) \\
+&amp;= \text{Re } F(z(b)) - \text{Re } F(z(a)) + i \text{Im } F(z(b)) - i \text{Im } F(z(a)) \\
+&amp;= \{ \text{Re } F(z(b)) + i \text{Im } F(z(b)) \} - \{ \text{Re } F(z(a)) + i \text{Im } F(z(a)) \} \\
+&amp;= F(z(b)) - F(z(a))\end{split}\]</div>
+<p>線積分の積分の値は曲線、すなわち、積分路 <span class="math notranslate nohighlight">\(C\)</span> の終点 <span class="math notranslate nohighlight">\(z(b) = z_2\)</span> と始点 <span class="math notranslate nohighlight">\(z(a) = z_1\)</span> で定まり、
+<span class="math notranslate nohighlight">\(C\)</span> の形には無関係であるから、</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = \underbrace{\int_{z_1}^{z_2}}_{経路に依らない} f(z) dz = [F(z)]_{z_1}^{z_2} = F(z_2) - F(z_1)\]</div>
+<p>とかける。</p>
+</section>
+<section id="id9">
+<h2>コーシーの積分公式<a class="headerlink" href="#id9" title="Link to this heading"></a></h2>
+<p>コーシー・グルサーの定理に並んで、もう一つ重要な公式がある。
+それが次のコーシーの積分公式である。</p>
+<hr class="docutils" />
+<p>正の向きを持った区分的に滑らかなジョルダン曲線 <span class="math notranslate nohighlight">\(C\)</span> の上と内部で
+<span class="math notranslate nohighlight">\(f(z)\)</span> は正則であるとする。
+<span class="math notranslate nohighlight">\(z_0\)</span> が <span class="math notranslate nohighlight">\(C\)</span> <strong>の内部の任意の点</strong> のとき、</p>
+<div class="math notranslate nohighlight">
+\[f(z_0) = \frac{1}{2 \pi i} \int_C \frac{f(z)}{z - z_0} dz\]</div>
+<p>が成り立つ。</p>
+<hr class="docutils" />
+<p>この定理は、<span class="math notranslate nohighlight">\(C\)</span> の内部の点 <span class="math notranslate nohighlight">\(z_0\)</span> における関数の値 <span class="math notranslate nohighlight">\(f(z_0)\)</span> が
+<span class="math notranslate nohighlight">\(C\)</span> の上の点 <span class="math notranslate nohighlight">\(z\)</span> における <span class="math notranslate nohighlight">\(f(z)\)</span> の値で定まる、ことを示す。
+また、次のように書き直すと、曲線 <span class="math notranslate nohighlight">\(C\)</span> に沿う線積分の値を求める場合に応用することができる。</p>
+<div class="math notranslate nohighlight">
+\[\int_C \frac{f(z)}{z - z_0} dz = 2 \pi i f(z_0)\]</div>
+<p>この関係を用いることで、線積分の値を実際に計算することなく、また、原始関数も用いることなく、
+積分の値を計算することが可能である。</p>
+<p><span class="math notranslate nohighlight">\(f(z_0)\)</span> を形式的に微分することで、次の <strong>コーシーの微積分公式</strong> が得られる。</p>
+<div class="math notranslate nohighlight">
+\[f^{(n)} (z) = \frac{n!}{2 \pi i} \int_C \frac{f(s)}{(s - z)^{n+1}} ds\]</div>
+</section>
+<section id="id10">
+<h2>級数<a class="headerlink" href="#id10" title="Link to this heading"></a></h2>
+<p>ここでは複素数の級数について考える。
+複素数の場合も実数と同様に、極限や発散、収束などの概念を考えることができる。
+複素数列では、次のように実部と虚部のそれぞれが収束するとき、複素数列が収束するという。</p>
+<div class="math notranslate nohighlight">
+\[z_n = x_n + iy_n \quad (n=1, 2, ...), \quad z = x + iy\]</div>
+<p>のとき</p>
+<div class="math notranslate nohighlight">
+\[\lim_{n \to \infty} z_n = z \Longleftrightarrow \lim_{n \to \infty} x_n = x, \lim_{n \to \infty} y_n = y\]</div>
+<p>そして、複素数の級数</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=1}^\infty z_n = z_1 + z_2 + z_3 + ... + z_n + ...\]</div>
+<p>が <span class="math notranslate nohighlight">\(S\)</span> に収束するとは、</p>
+<div class="math notranslate nohighlight">
+\[S_N = \sum_{n=1}^N z_n = z_1 + z_2 + ... + z_N\]</div>
+<p>の作る数列 <span class="math notranslate nohighlight">\({S_N}\)</span> が収束することである。
+<span class="math notranslate nohighlight">\(S_N\)</span> を第 <span class="math notranslate nohighlight">\(N\)</span> 部分和、 <span class="math notranslate nohighlight">\(S\)</span> をこの級数の和といい、</p>
+<div class="math notranslate nohighlight">
+\[\sum_{n=1}^\infty z_n = S\]</div>
+<p>と書く。
+数列の場合と同様にして、級数が収束するのは、実部の級数、虚部の級数がそれぞれ
+級数の和の実部、虚部に収束するときである。</p>
+<p>級数では <strong>余り</strong> という概念がある。次の <span class="math notranslate nohighlight">\(\rho_N\)</span> を余りという。
+<span class="math notranslate nohighlight">\(\lim_{N \to \infty} \sum_{n=1}^N z_n = S\)</span> のとき、</p>
+<div class="math notranslate nohighlight">
+\[S = \underbrace{\sum_{n=1}^N z_n}_{第 N 部分和} + \underbrace{\sum_{n=N+1}^\infty z_n}_{それ以降の級数} = S_N + \rho_N\]</div>
+<p>と書くと、 <span class="math notranslate nohighlight">\(N \to \infty\)</span> のとき <span class="math notranslate nohighlight">\(S_N \to S \Longleftrightarrow \rho_N \to 0\)</span> であるから、
+<strong>無限級数が収束するための必要十分条件は、余りが 0 に収束する</strong> ことであるといえる。</p>
+</section>
+<section id="taylor-laurent">
+<h2>Taylor 展開 と Laurent 展開<a class="headerlink" href="#taylor-laurent" title="Link to this heading"></a></h2>
+<p>実数の場合と同様に、Taylor 展開についても複素数を対象に定義することができる。
+複素数の Taylor の定理は次のとおりである。</p>
+<hr class="docutils" />
+<p>中心が <span class="math notranslate nohighlight">\(z_0\)</span> 、半径が <span class="math notranslate nohighlight">\(R\)</span> の円 <span class="math notranslate nohighlight">\(C\)</span> の内部で <strong>関数</strong> <span class="math notranslate nohighlight">\(f(z)\)</span> <strong>が正則である</strong> とき、
+<span class="math notranslate nohighlight">\(C\)</span> 内の点 <span class="math notranslate nohighlight">\(z\)</span> において <span class="math notranslate nohighlight">\(f(z)\)</span> は</p>
+<div class="math notranslate nohighlight">
+\[f(z) = f(z_0) + \frac{f'(z_0)}{1!} (z - z_0) + \frac{f''(z_0)}{2!} (z - z_0)^2 + ...
++ \frac{f^{(n)} (z_0)}{n!} (z - z_0)^n + ...\]</div>
+<p>の形でのべき級数に展開できる。すなわち、右辺のべき級数は <span class="math notranslate nohighlight">\(|z - z_0| &lt; R\)</span> なる <span class="math notranslate nohighlight">\(z\)</span> に対して収束し、
+その極限は <span class="math notranslate nohighlight">\(f(z)\)</span> に等しい。</p>
+<hr class="docutils" />
+<p>特に、 <span class="math notranslate nohighlight">\(z_0 = 0\)</span> のとき、マクローリン展開（級数）という。</p>
+<p>他方、関数 <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(z = z_0\)</span> で正則でないときは Taylor の定理を適用できない（ <span class="math notranslate nohighlight">\(z_0\)</span> で微分できないので）。
+しかし、 <span class="math notranslate nohighlight">\(z - z_0\)</span> <strong>の正のべきと負のべきを含む級数の形でならば表すことができる</strong> 。
+これを一般に述べたものが Laurent の定理である。</p>
+<hr class="docutils" />
+<p>点 <span class="math notranslate nohighlight">\(z_0\)</span> を中心とする二つの同心円 <span class="math notranslate nohighlight">\(C_0, C_1\)</span> （半径はそれぞれ <span class="math notranslate nohighlight">\(R_0, R_1\)</span> ） は
+正の向きを持つとする。関数 <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(C_0\)</span> 上、 <span class="math notranslate nohighlight">\(C_1\)</span> 上、および <span class="math notranslate nohighlight">\(C_0\)</span> と
+<span class="math notranslate nohighlight">\(C_1\)</span> の間の円環領域において正則であるとき、この円環領域の中の任意の点 <span class="math notranslate nohighlight">\(z\)</span> において、
+<span class="math notranslate nohighlight">\(f(z)\)</span> は次の形に表される。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(z) &amp;= \sum_{n=0}^\infty \underbrace{a_n}_{C_1 に関する積分} (z - z_0)^n + \sum_{n=1}^\infty \underbrace{b_n}_{C_0 に関する積分} \frac{1}{(z - z_0)^n} \\
+a_n &amp;= \frac{1}{2 \pi i} \int_{C_1} \frac{f(z)}{(z - z_0)^{n+1}} dz \\
+b_n &amp;= \frac{1}{2 \pi i} \int_{C_0} \frac{f(z)}{(z - z_0)^{-n+1}} dz\end{split}\]</div>
+<hr class="docutils" />
+<p><span class="math notranslate nohighlight">\(a_n, b_n\)</span> は次のコーシーの微積分公式の形となっている。
+（正確には <span class="math notranslate nohighlight">\(f^{(n)}\)</span> を <span class="math notranslate nohighlight">\(n!\)</span> でわったもの）</p>
+<div class="math notranslate nohighlight">
+\[f^{(n)} (z_0) = \frac{n!}{2 \pi i} \int_C \frac{f(z)}{(z - z_0)^{n+1}} dz\]</div>
+<p>なので Taylor 展開との対比を意識すると次のように書き直せる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(z) &amp;= \underbrace{\sum_{n=0}^\infty \frac{f^{(n)}(z_0)}{n!} (z - z_0)^n}_{Taylor 展開の部分} + \underbrace{\sum_{n=1}^\infty b_n \frac{1}{(z - z_0)^n}}_{主要部} \\\end{split}\]</div>
+<figure class="align-center" id="laurent-expand">
+<a class="reference internal image-reference" href="../../../_images/Laurent_expand.jpg"><img alt="../../../_images/Laurent_expand.jpg" src="../../../_images/Laurent_expand.jpg" style="width: 551.5px; height: 300.0px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">図 4 </span><span class="caption-text">円環領域</span><a class="headerlink" href="#laurent-expand" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>関数 <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(C_1\)</span> 上と <span class="math notranslate nohighlight">\(C_1\)</span> の内部のすべての点（ <span class="math notranslate nohighlight">\(z_0\)</span> においても）で正則であるときは、
+<span class="math notranslate nohighlight">\(b_n\)</span> の被積分関数 <span class="math notranslate nohighlight">\(f(z) / (z - z_0)^{-n+1}\)</span> も正則となるので、
+コーシー（グルサー）の定理から積分値は0となる。
+よって、 <span class="math notranslate nohighlight">\(b_n\)</span> は 0 なので <span class="math notranslate nohighlight">\(f(z)\)</span> は <span class="math notranslate nohighlight">\(a_n\)</span> だけの項となり、 Taylor 展開の式に一致する。</p>
+<p>また、 <span class="math notranslate nohighlight">\(R_0 \leq |z - z_0| \leq R_1\)</span> において、 <span class="math notranslate nohighlight">\(a_n, b_n\)</span> の被積分関数はともに正則であるから、
+この円環領域内の正方向をもつ任意のジョルダン曲線 <span class="math notranslate nohighlight">\(C\)</span> を積分路 <span class="math notranslate nohighlight">\(C_0, C_1\)</span> の代わりに用いても、
+積分の値は変わらない。したがって、Laurent 展開は次のように書ける。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(z) &amp;= \sum_{n = -\infty}^\infty c_n (z - z_0)^n \quad (R_0 &lt; |z - z_0| &lt; R_1) \\
+c_n &amp;= \frac{1}{2 \pi i} \underbrace{\int_C}_{積分路は C } \frac{f(z)}{(z - z_0)^{n+1}} dz\end{split}\]</div>
+<p>次の例を見ていく。</p>
+<p><span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 4\)</span> のとき、以下のローラン展開が成り立つ。</p>
+<div class="math notranslate nohighlight">
+\[\frac{1}{4z - z^2} = \frac{1}{4z} + \sum_{n=0}^\infty \frac{z^n}{4^{n+2}}\]</div>
+<p>これは次のようにして導くことができる。</p>
+<p>まず <span class="math notranslate nohighlight">\(\frac{1}{4z - z^2} = \frac{1}{z(4 - z)}\)</span> であるから <span class="math notranslate nohighlight">\(z = 0, 4\)</span> では正則ではない（極をもつ）。
+いま考えている領域は <span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 4\)</span> なので原点を中心とする円（但し <span class="math notranslate nohighlight">\(半径 &lt; 2\)</span> ）の中では
+<span class="math notranslate nohighlight">\(z = 0\)</span> が正則でない点となる。
+先ほどの式は <span class="math notranslate nohighlight">\(\frac{1}{4z} \frac{1}{1 - z/4}\)</span> と変形でき、
+<span class="math notranslate nohighlight">\(\frac{1}{1 - z/4}\)</span> については領域内で正則なのでテイラー展開（マクローリン展開）することが可能である。
+よって、 <span class="math notranslate nohighlight">\(\frac{1}{1 - z} = \sum_{n=0}^\infty z^n\)</span> であるから、次のように計算することができる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{1}{4z - z^2} &amp;= \frac{1}{4z} \frac{1}{1 - z/4} \\
+&amp;= \frac{1}{4z} \sum_{n=0}^\infty (\frac{z}{4})^n \\
+&amp;= \frac{1}{4z} \{1 + \frac{z}{4} + \frac{z^2}{4^2} + ... \} \\
+&amp;= \frac{1}{4z} + \frac{1}{4^2} + \frac{z^1}{4^3} + \frac{z^2}{4^4} + ... \\
+&amp;= \frac{1}{4z} + \sum_{n=0}^\infty \frac{z^n}{4^{n+2}}\end{split}\]</div>
+</section>
+<section id="id11">
+<h2>留数定理<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
+<p>Laurent 展開したときの係数 <span class="math notranslate nohighlight">\(b_1\)</span> を <span class="math notranslate nohighlight">\(f(z)\)</span> の <span class="math notranslate nohighlight">\(z_0\)</span> における <strong>留数</strong> という。
+（但し、 <span class="math notranslate nohighlight">\(z_0\)</span> を孤立特異点としている）</p>
+<p>次の例を考える。
+<span class="math notranslate nohighlight">\(C\)</span> を正方向をもった円 <span class="math notranslate nohighlight">\(|z| = 2\)</span> とし、 <span class="math notranslate nohighlight">\(f(z) = e^{-z} / (z - 1)^2\)</span> とすると、
+孤立特異点 <span class="math notranslate nohighlight">\(z = 1\)</span> を除いて、 <span class="math notranslate nohighlight">\(C\)</span> 上と <span class="math notranslate nohighlight">\(C\)</span> の内部で <span class="math notranslate nohighlight">\(f(z)\)</span> は正則である。
+<span class="math notranslate nohighlight">\(z = 1\)</span> における留数を考える。 <span class="math notranslate nohighlight">\(f(z)\)</span> を Laurent 展開する。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(z) = &amp;= \frac{e^{^z}}{(z - 1)^2}
+= \frac{e^{-1} e^{-(z-1)}}{(z - 1)^2}
+= \frac{1}{e} \frac{1}{(z - 1)^2} \sum_{n=0}^\infty \frac{(-1)^n (z-1)^n}{n!} \\
+&amp;= \sum_{n=0}^\infty \frac{(-1)^n}{n!e} (z - 1)^{n-2} \\
+&amp;= \underbrace{\frac{1}{e}}_{b_2 の項} \frac{1}{(z - 1)^2} - \underbrace{\frac{1}{e}}_{b_1 の項} \frac{1}{z - 1} + \frac{1}{2! e} - \frac{1}{3! e}(z - 1)+ ... \\
+\therefore b_1 &amp;= - \frac{1}{e}\end{split}\]</div>
+<p>ここで、 Laurent 展開の公式で係数 <span class="math notranslate nohighlight">\(b_n\)</span> は次の形で与えられるのであった。</p>
+<div class="math notranslate nohighlight">
+\[b_n = \frac{1}{2 \pi i} \int_C \frac{f(z)}{(z - z_0)^{-n+1}} dz \quad (n = 1, 2, ...)\]</div>
+<p><span class="math notranslate nohighlight">\(b_n\)</span> は <span class="math notranslate nohighlight">\(n = 1\)</span> のとき、</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = 2 \pi i b_1\]</div>
+<p>である。よって、 <span class="math notranslate nohighlight">\(b_1 = - \frac{1}{e}\)</span> を代入して、</p>
+<div class="math notranslate nohighlight">
+\[\int_C \frac{e^{-z}}{(z - 1)^2} dz = - \frac{2 \pi i}{e}\]</div>
+<p>となる。</p>
+<p>このように、留数を用いることで積分を計算することが可能である。</p>
+<p>次の留数定理は、ジョルダン曲線 <span class="math notranslate nohighlight">\(C\)</span> が正の向きを持ち、 <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(C\)</span> の上で正則であるとき、
+<span class="math notranslate nohighlight">\(\int_C f(z) dz\)</span> の値は <span class="math notranslate nohighlight">\(C\)</span> の <strong>内部にある孤立特異点のそれぞれにおける留数の和</strong> の <span class="math notranslate nohighlight">\(2 \pi i\)</span> 倍であることを
+主張している。</p>
+<hr class="docutils" />
+<p><span class="math notranslate nohighlight">\(C\)</span> は正の向きを持つジョルダン曲線、 <span class="math notranslate nohighlight">\(f(z)\)</span> は <span class="math notranslate nohighlight">\(C\)</span> の内部にある
+有限個の特異点 <span class="math notranslate nohighlight">\(z_1, z_2, ..., z_n\)</span> を除いて正則であるとする。
+特異点 <span class="math notranslate nohighlight">\(z_j\)</span> における留数を <span class="math notranslate nohighlight">\(R(z_j)\)</span> とすると</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz = 2 \pi i \{ R(z_1) + R(z_2) + ... + R(z_n) \}\]</div>
+<p>が成り立つ。</p>
+<hr class="docutils" />
+<p>証明は次のように示される。</p>
+<hr class="docutils" />
+<p>特異点 <span class="math notranslate nohighlight">\(z_1, z_2, ..., z_n\)</span> のまわりに互いに、また <span class="math notranslate nohighlight">\(C\)</span> とも交わらないように
+それぞれ小さな円 <span class="math notranslate nohighlight">\(C_1, C_2, ..., C_n\)</span> を描く。これらに正方向の向きをつけると</p>
+<div class="math notranslate nohighlight">
+\[\int_C f(z) dz - \int_{C_1} f(z) dz - \int_{C_2} f(z) dz - ... - \int_{C_n} f(z) dz = 0\]</div>
+<p>である。これに</p>
+<div class="math notranslate nohighlight">
+\[\int_{C_j} f(z) dz = 2 \pi i R(z_j) \quad (j = 1, 2, ..., n)\]</div>
+<p>を代入すればよい。（証明終）</p>
+<hr class="docutils" />
+<section id="id12">
+<h3>留数の求め方<a class="headerlink" href="#id12" title="Link to this heading"></a></h3>
+<p>留数の求め方は、与えられる <span class="math notranslate nohighlight">\(f(z)\)</span> の形に応じて大きく3つに分けて考えることができる。</p>
+<p><strong>1位の極を持つ場合</strong></p>
+<p>Laurent 級数は</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \underbrace{\frac{b_1}{z - z_0}}_{1位の極の部分} + \sum_{n=0}^\infty a_n (z - z_0)^n\]</div>
+<p>の形である（ <span class="math notranslate nohighlight">\(b_1 = R(z_0)\)</span> ）から、両辺に <span class="math notranslate nohighlight">\(z -z_0\)</span> をかけると</p>
+<div class="math notranslate nohighlight">
+\[(z - z_0)f(z) = b_1 + \sum_{n=0}^\infty a_n(z - z_0)^{n+1}\]</div>
+<p>ここで <span class="math notranslate nohighlight">\(z = z_0\)</span> または <span class="math notranslate nohighlight">\(z \to z_0\)</span> とすると <span class="math notranslate nohighlight">\(右辺の第2項 \to 0\)</span> である。よって、</p>
+<div class="math notranslate nohighlight">
+\[R(z_0) = \lim_{z \to z_0} \{ (z - z_0) f(z) \} \quad (=[(z - z_0) f(z)]_{z=z_0})\]</div>
+<p>である。このように、複素関数 <span class="math notranslate nohighlight">\(f'(z)\)</span> が1位の極を持つ場合は、
+容易に留数を求めることができる。</p>
+<p><strong>m 位の極を持つ場合</strong></p>
+<p>この場合、Laurent 展開は次のようになる。</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \frac{b_m}{(z - z_0)^m} + \frac{b_{m-1}}{(z - z_0)^{m-1}} + ... + \frac{b_2}{(z - z_0)^2} + \frac{b_1}{z - z_0}
++ \sum_{n=0}^\infty a_n (z - z_0)^n\]</div>
+<p>の形である（ <span class="math notranslate nohighlight">\(b_1 = R(z_0)\)</span> ）。両辺に <span class="math notranslate nohighlight">\((z - z_0)^m\)</span> をかけると</p>
+<div class="math notranslate nohighlight">
+\[(z - z_0)^m f(z) = b_m + b_{m-1} (z - z_0) + ... + b_2 (z - z_0)^{m-2} + b_1 (z - z_0)^{m-1} + \sum_{n=0}^\infty a_n (z - z_0)^{n+m}\]</div>
+<p>この両辺を <span class="math notranslate nohighlight">\((m-1)\)</span> 回微分すると <span class="math notranslate nohighlight">\(m-1\)</span> 乗以下のべきの項は 0 となるので</p>
+<div class="math notranslate nohighlight">
+\[\frac{d^{m-1}}{dz^{m-1}} \{ (z - z_0)^m f(z) \} = (m - 1)! \underbrace{b_1}_{= R(z_0)}
++ \sum_{n=0}^\infty a_n (n + m)(n + m -1) ... (n + 2)(z - z_0)^{n+1}\]</div>
+<p>だから、 <span class="math notranslate nohighlight">\(z = z_0\)</span> または <span class="math notranslate nohighlight">\(z \to z_0\)</span> とすれば、右辺の <span class="math notranslate nohighlight">\(\sum\)</span> の部分は 0 となる。
+したがって、</p>
+<div class="math notranslate nohighlight">
+\[R(z_0) = \frac{1}{(m - 1)!} \lim_{z \to z_0} \frac{d^{m-1}}{dz^{m-1}} \{ (z - z_0)^m f(z) \}\]</div>
+<p>である。 <span class="math notranslate nohighlight">\(m = 1\)</span> とすると1位の極を持つ場合の式と一致する。</p>
+<p><strong>分数関数の場合</strong></p>
+<p><span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(z = z_0\)</span> で1位の極をもち</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \frac{p(z)}{q(z)} \quad (p(z_0) \neq 0, q(z_0) = 0, q'(z_0) \neq 0)\]</div>
+<p>のように表されるとき、 <span class="math notranslate nohighlight">\(z_0\)</span> における留数 <span class="math notranslate nohighlight">\(R(z_0)\)</span> は</p>
+<div class="math notranslate nohighlight">
+\[R(z_0) = [\frac{p(z)}{q'(z)}]_{z=z_0} = \frac{p(z_0)}{q'(z_0)}\]</div>
+<p>である。これは次のようにしてわかる。
+<span class="math notranslate nohighlight">\(f(z)\)</span> は <span class="math notranslate nohighlight">\(z = z_0\)</span> で1位の極をもつから</p>
+<div class="math notranslate nohighlight">
+\[q(z) = (z - z_0) r(z) \quad r(z_0) \neq 0\]</div>
+<p>と書ける。よって、</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \frac{p(z)}{(z - z_0) r(z)}\]</div>
+<p>1位の極を持つ場合の式から</p>
+<div class="math notranslate nohighlight">
+\[R(z_0) = [(z - z_0) f(z)]_{z=z_0} = [\frac{p(z)}{r(z)}]_{z=z_0} = \frac{p(z_0)}{r(z_0)}\]</div>
+<p>ところで、 <span class="math notranslate nohighlight">\(q(z) = (z - z_0) r(z)\)</span> を微分すると</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}q'(z) &amp;= r(z) + (z - z_0) r'(z) \\
+\therefore q'(z_0) &amp;= r(z_0) \\
+\therefore R(z_0) &amp;= \frac{p(z_0)}{q'(z_0)}\end{split}\]</div>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="Footer">
+        <a href="../linear_algebra/index.html" class="btn btn-neutral float-left" title="(TBD) 線形代数" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> Previous</a>
+        <a href="../../physics/index.html" class="btn btn-neutral float-right" title="物理" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; Copyright 2025.</p>
+  </div>
+
+  Built with <a href="https://www.sphinx-doc.org/">Sphinx</a> using a
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">theme</a>
+    provided by <a href="https://readthedocs.org">Read the Docs</a>.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
