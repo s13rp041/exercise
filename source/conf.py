@@ -18,6 +18,7 @@ extensions = [
     'sphinx.ext.napoleon',
     'myst_parser', 
     'sphinx.ext.githubpages', 
+    'sphinx.ext.mathjax', 
 ]
 
 templates_path = ['_templates']

@@ -7,9 +7,7 @@ build/doctrees/*
 build/latex/*
 !build/latex/pastexam.pdf
 
-docs/_images/*
 docs/_sources/*
-docs/_static/*
 docs/.doctrees/*
 docs/.*
 !docs/.nojekyll
