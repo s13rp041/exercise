@@ -6,9 +6,9 @@
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
 
-project = 'past exam'
-copyright = '2025, ytakayama'
-author = 'ytakayama'
+project = '大学院入試問題 解答例と解説'
+copyright = '2025'
+author = ''
 
 # -- General configuration ---------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#general-configuration
