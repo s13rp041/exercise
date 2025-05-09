@@ -3,8 +3,10 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-東京科学大学
-=======================
+(TBD) 東京科学大学（物質理工学院 材料系）
+==============================================
+
+TBD
 
 .. toctree::
    :maxdepth: 2

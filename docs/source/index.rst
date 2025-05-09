@@ -1,22 +1,21 @@
-.. past exam documentation master file, created by
-   sphinx-quickstart on Sun May  4 19:27:59 2025.
-   You can adapt this file completely to your liking, but it should at least
-   contain the root `toctree` directive.
+======================================
+大学院入試問題の解答例
+======================================
 
-past exam documentation
-=======================
-
-Add your content using ``reStructuredText`` syntax. See the
-`reStructuredText <https://www.sphinx-doc.org/en/master/usage/restructuredtext/index.html>`_
-documentation for details.
-
+このドキュメントは、いくつかの大学院入試（博士前期課程）問題を対象として解答例および解説案を備忘、参考ノートとして示すものである。
+主に物理系の大学院の問題を対象としている。
 
 .. toctree::
    :maxdepth: 2
-   :caption: Contents:
 
-   saitama_univ/index
-   tmu_univ/index
-   ist_univ/index
+   university/index
    
+
+また、各問題を解くにあたり必要となる内容を次のとおりまとめている。
+
+.. toctree::
+   :maxdepth: 2
+
+   knowledge/index
+
 
