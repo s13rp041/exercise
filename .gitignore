@@ -2,15 +2,15 @@
 
 MEMO.md
 
-docs/build/doctrees/*
+build/doctrees/*
 # docs/build/html/*
-docs/build/latex/*
-!docs/build/latex/pastexam.pdf
+build/latex/*
+!build/latex/pastexam.pdf
 
-docs/docs/_images/*
-docs/docs/_sources/*
-docs/docs/_static/*
-docs/docs/.doctrees/*
-docs/docs/.*
-docs/docs/objects.inv
+docs/_images/*
+docs/_sources/*
+docs/_static/*
+docs/.doctrees/*
+docs/.*
+docs/objects.inv
 
