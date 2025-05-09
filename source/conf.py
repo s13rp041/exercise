@@ -16,7 +16,8 @@ author = ''
 extensions = [
     'sphinx.ext.autodoc',
     'sphinx.ext.napoleon',
-    'myst_parser'
+    'myst_parser', 
+    'sphinx.ext.githubpages', 
 ]
 
 templates_path = ['_templates']
