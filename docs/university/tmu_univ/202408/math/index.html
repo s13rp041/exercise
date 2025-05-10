@@ -17,6 +17,7 @@
       <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../../../_static/translations.js?v=4755f45a"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../../genindex.html" />
     <link rel="search" title="検索" href="../../../../search.html" />
@@ -95,14 +96,52 @@
 <h1>数学<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
 <section id="id2">
 <h2>問1<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
-<p>TBD</p>
+<p>オイラーの公式から次が成り立つ。</p>
+<div class="math notranslate nohighlight">
+\[ \begin{align}\begin{aligned}\begin{split}e^{i \theta} = \cos \theta + i \sin \theta , \quad e^{-i \theta} = \cos \theta - i \sin \theta \\\end{split}\\\begin{split}\therefore \cos \theta &amp;= \frac{e^{i \theta} + e^{-i \theta}}{2} = \frac{z + z^{^-1}}{2} \\
+\therefore \sin \theta &amp;= \frac{e^{i \theta} - e^{-i \theta}}{2} = \frac{z - z^{^-1}}{2}\end{split}\end{aligned}\end{align} \]</div>
 </section>
 <section id="id3">
 <h2>問2<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
-<p>TBD</p>
+<p><span class="math notranslate nohighlight">\(z = e^{i \theta}\)</span> であるから <span class="math notranslate nohighlight">\(dz = i e^{i \theta} d \theta = iz d \theta\)</span> となる。
+よって、与えられた式は次のように変形できる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_0^{2 \pi} \frac{e^{i 3 \theta}}{2 - \sin \theta} d \theta &amp;= \int_C \frac{z^3}{2 - \frac{1}{2i} (z - \frac{1}{z})} \frac{dz}{iz} \\
+&amp;= \int_C \frac{-2 z^3}{z^2 - 4iz - 1} dz\end{split}\]</div>
+<p>したがって、 <span class="math notranslate nohighlight">\(f(z)\)</span> は以下となる。</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \int_C \frac{-2 z^3}{z^2 - 4iz - 1} dz\]</div>
 </section>
 <section id="id4">
 <h2>問3<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>問2 の結果から、 <span class="math notranslate nohighlight">\(f(z)\)</span> の分母は次のように変形できる。</p>
+<div class="math notranslate nohighlight">
+\[z^2 - 4iz -1 = (z - 2i)^2 + 3\]</div>
+<p>いま <span class="math notranslate nohighlight">\(C\)</span> は <span class="math notranslate nohighlight">\(|z|^2 = 1\)</span> で定義される閉曲線であるから、
+この中に含まれる <span class="math notranslate nohighlight">\(f(z)\)</span> の極は <span class="math notranslate nohighlight">\(z = i(2 - \sqrt 3)\)</span> のみである（これは1位の極）。</p>
+</section>
+<section id="id5">
+<h2>問4<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<p><span class="math notranslate nohighlight">\(\sin 3 \theta = \frac{e^{i 3 \theta} - e^{-i 3 \theta}}{2i} = \frac{z^3 - z^{-3}}{2i}\)</span> であるから、
+与えられた式は次のように変形できる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_0^{2 \pi} \frac{\sin 3 \theta}{2 - \sin \theta} d \theta
+&amp;= \frac{1}{2i} \int_0^{2 \pi} \frac{e^{i 3 \theta} + e^{-i 3 \theta}}{2 - \sin \theta} d \theta \\
+&amp;= \frac{1}{2i} \{ \int_0^{2 \pi} \frac{e^{i 3 \theta}}{2 - \sin \theta} d \theta - \int_0^{2 \pi} \frac{e^{-i 3 \theta}}{2 - \sin \theta} d \theta \} \\
+&amp;\triangleq \frac{1}{2i} \{ \int_C f_1(z) dz - \int_C f_2(z) dz \}\end{split}\]</div>
+<p>右辺の第一項は問2で計算した結果が利用できる。第二項も同様にして次のように計算できる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_C f_2(z) dz &amp;= \int_0^{2 \pi} \frac{e^{-i 3 \theta}}{2 - \sin \theta} d \theta
+= \int_C \frac{-2 z^{-3}}{z^2 -4iz - 1} dz \\
+&amp;= \int_C \frac{-2}{z^3 (z^2 -4iz - 1)} dz\end{split}\]</div>
+<p>よって、 <span class="math notranslate nohighlight">\(f_2(z)\)</span> は <span class="math notranslate nohighlight">\(C\)</span> の中に <span class="math notranslate nohighlight">\(z = 0\)</span> に3位の極、<span class="math notranslate nohighlight">\(z = i(2 - \sqrt 3)\)</span> に1位の極を持つ。</p>
+<p>以上の結果から、留数定理を用いて与えられた積分を求める。
+留数定理によると次の式が成り立つ。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\int_C f_1(z) dz &amp;= 2 \pi i (Res(z = i(2 - \sqrt 3))) \\
+\int_C f_2(z) dz &amp;= 2 \pi i (Res(z = 0) + Res(z = i(2 - \sqrt 3))) \\\end{split}\]</div>
+<p>但し <span class="math notranslate nohighlight">\(Res(z = z_0)\)</span> は <span class="math notranslate nohighlight">\(z = z_0\)</span> での留数を表す。
+<span class="math notranslate nohighlight">\(f_1(z)\)</span> は1位の極であるから、</p>
 </section>
 </section>
 

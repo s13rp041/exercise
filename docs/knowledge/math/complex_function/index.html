@@ -545,6 +545,7 @@ I_1 &amp;= \int_0^1 (3 + 4i) t^2 (2 + i) dt = (3 + 4i) (2 + i) \int_0^1 t^2 dt \
 <p>実数の場合と同様に、Taylor 展開についても複素数を対象に定義することができる。
 複素数の Taylor の定理は次のとおりである。</p>
 <hr class="docutils" />
+<p><strong>Taylor 展開</strong></p>
 <p>中心が <span class="math notranslate nohighlight">\(z_0\)</span> 、半径が <span class="math notranslate nohighlight">\(R\)</span> の円 <span class="math notranslate nohighlight">\(C\)</span> の内部で <strong>関数</strong> <span class="math notranslate nohighlight">\(f(z)\)</span> <strong>が正則である</strong> とき、
 <span class="math notranslate nohighlight">\(C\)</span> 内の点 <span class="math notranslate nohighlight">\(z\)</span> において <span class="math notranslate nohighlight">\(f(z)\)</span> は</p>
 <div class="math notranslate nohighlight">
@@ -553,11 +554,18 @@ I_1 &amp;= \int_0^1 (3 + 4i) t^2 (2 + i) dt = (3 + 4i) (2 + i) \int_0^1 t^2 dt \
 <p>の形でのべき級数に展開できる。すなわち、右辺のべき級数は <span class="math notranslate nohighlight">\(|z - z_0| &lt; R\)</span> なる <span class="math notranslate nohighlight">\(z\)</span> に対して収束し、
 その極限は <span class="math notranslate nohighlight">\(f(z)\)</span> に等しい。</p>
 <hr class="docutils" />
-<p>特に、 <span class="math notranslate nohighlight">\(z_0 = 0\)</span> のとき、マクローリン展開（級数）という。</p>
+<p>特に、 <span class="math notranslate nohighlight">\(z_0 = 0\)</span> のとき、マクローリン展開（級数）という。
+代表的な関数のマクローリン展開は次のとおりである。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{1}{1 - z} &amp;= 1 + z + z^2 + ... + z^n + ... \\
+e^z &amp;= 1 + z + \frac{z^2}{2!} + ... + \frac{z^n}{n!} + ... \\
+\cos z &amp;= 1 - \frac{z^2}{2!} + \frac{z^4}{4!} - ... + \frac{(-1)^m}{(2m)!} z^{2m} + ... \\
+\sin z &amp;= z - \frac{z^3}{3!} + \frac{z^5}{5!} - ... + \frac{(-1)^{m-1}}{(2m -1)!} z^{2m -1} + ... \\\end{split}\]</div>
 <p>他方、関数 <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(z = z_0\)</span> で正則でないときは Taylor の定理を適用できない（ <span class="math notranslate nohighlight">\(z_0\)</span> で微分できないので）。
 しかし、 <span class="math notranslate nohighlight">\(z - z_0\)</span> <strong>の正のべきと負のべきを含む級数の形でならば表すことができる</strong> 。
 これを一般に述べたものが Laurent の定理である。</p>
 <hr class="docutils" />
+<p><strong>Laurent 展開</strong></p>
 <p>点 <span class="math notranslate nohighlight">\(z_0\)</span> を中心とする二つの同心円 <span class="math notranslate nohighlight">\(C_0, C_1\)</span> （半径はそれぞれ <span class="math notranslate nohighlight">\(R_0, R_1\)</span> ） は
 正の向きを持つとする。関数 <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(C_0\)</span> 上、 <span class="math notranslate nohighlight">\(C_1\)</span> 上、および <span class="math notranslate nohighlight">\(C_0\)</span> と
 <span class="math notranslate nohighlight">\(C_1\)</span> の間の円環領域において正則であるとき、この円環領域の中の任意の点 <span class="math notranslate nohighlight">\(z\)</span> において、
@@ -568,7 +576,7 @@ a_n &amp;= \frac{1}{2 \pi i} \int_{C_1} \frac{f(z)}{(z - z_0)^{n+1}} dz \\
 b_n &amp;= \frac{1}{2 \pi i} \int_{C_0} \frac{f(z)}{(z - z_0)^{-n+1}} dz\end{split}\]</div>
 <hr class="docutils" />
 <p><span class="math notranslate nohighlight">\(a_n, b_n\)</span> は次のコーシーの微積分公式の形となっている。
-（正確には <span class="math notranslate nohighlight">\(f^{(n)}\)</span> を <span class="math notranslate nohighlight">\(n!\)</span> でわったもの）</p>
+（正確には <span class="math notranslate nohighlight">\(f^{(n)}\)</span> を <span class="math notranslate nohighlight">\(n!\)</span> で割ったもの）</p>
 <div class="math notranslate nohighlight">
 \[f^{(n)} (z_0) = \frac{n!}{2 \pi i} \int_C \frac{f(z)}{(z - z_0)^{n+1}} dz\]</div>
 <p>なので Taylor 展開との対比を意識すると次のように書き直せる。</p>
@@ -592,22 +600,97 @@ b_n &amp;= \frac{1}{2 \pi i} \int_{C_0} \frac{f(z)}{(z - z_0)^{-n+1}} dz\end{spl
 \[\begin{split}f(z) &amp;= \sum_{n = -\infty}^\infty c_n (z - z_0)^n \quad (R_0 &lt; |z - z_0| &lt; R_1) \\
 c_n &amp;= \frac{1}{2 \pi i} \underbrace{\int_C}_{積分路は C } \frac{f(z)}{(z - z_0)^{n+1}} dz\end{split}\]</div>
 <p>次の例を見ていく。</p>
-<p><span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 4\)</span> のとき、以下のローラン展開が成り立つ。</p>
+<p><span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 4\)</span> のとき、以下の Laurent 展開が成り立つ。</p>
 <div class="math notranslate nohighlight">
 \[\frac{1}{4z - z^2} = \frac{1}{4z} + \sum_{n=0}^\infty \frac{z^n}{4^{n+2}}\]</div>
 <p>これは次のようにして導くことができる。</p>
-<p>まず <span class="math notranslate nohighlight">\(\frac{1}{4z - z^2} = \frac{1}{z(4 - z)}\)</span> であるから <span class="math notranslate nohighlight">\(z = 0, 4\)</span> では正則ではない（極をもつ）。
-いま考えている領域は <span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 4\)</span> なので原点を中心とする円（但し <span class="math notranslate nohighlight">\(半径 &lt; 2\)</span> ）の中では
-<span class="math notranslate nohighlight">\(z = 0\)</span> が正則でない点となる。
+<p>まず <span class="math notranslate nohighlight">\(\frac{1}{4z - z^2} = \frac{1}{z(4 - z)}\)</span> であるから <span class="math notranslate nohighlight">\(z = 0, 4\)</span> では正則ではない（孤立特異点である）。
+いま考えている領域は <span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 4\)</span> なので原点を中心とする円（但し <span class="math notranslate nohighlight">\(半径 &lt; 4\)</span> ）の中では
+<span class="math notranslate nohighlight">\(z = 0\)</span> が特異点となる。
 先ほどの式は <span class="math notranslate nohighlight">\(\frac{1}{4z} \frac{1}{1 - z/4}\)</span> と変形でき、
 <span class="math notranslate nohighlight">\(\frac{1}{1 - z/4}\)</span> については領域内で正則なのでテイラー展開（マクローリン展開）することが可能である。
-よって、 <span class="math notranslate nohighlight">\(\frac{1}{1 - z} = \sum_{n=0}^\infty z^n\)</span> であるから、次のように計算することができる。</p>
+よって、 <span class="math notranslate nohighlight">\(\frac{1}{1 - z} = \sum_{n=0}^\infty z^n\)</span> である（ <span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 1\)</span> のとき）から、次のように計算することができる。</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}\frac{1}{4z - z^2} &amp;= \frac{1}{4z} \frac{1}{1 - z/4} \\
 &amp;= \frac{1}{4z} \sum_{n=0}^\infty (\frac{z}{4})^n \\
 &amp;= \frac{1}{4z} \{1 + \frac{z}{4} + \frac{z^2}{4^2} + ... \} \\
 &amp;= \frac{1}{4z} + \frac{1}{4^2} + \frac{z^1}{4^3} + \frac{z^2}{4^4} + ... \\
 &amp;= \frac{1}{4z} + \sum_{n=0}^\infty \frac{z^n}{4^{n+2}}\end{split}\]</div>
+<p>したがって、上式の Laurent 展開が成り立つ。</p>
+<section id="laurent">
+<h3>Laurent 展開の例<a class="headerlink" href="#laurent" title="Link to this heading"></a></h3>
+<p>他にもいくつかの例をみていく。
+<span class="math notranslate nohighlight">\(\frac{\cos z}{z^2}\)</span> と <span class="math notranslate nohighlight">\(e^{1/z}\)</span> を <span class="math notranslate nohighlight">\(z = 0\)</span> のまわりで Laurent 展開する。</p>
+<p><span class="math notranslate nohighlight">\(\cos z\)</span> のマクローリン展開は</p>
+<div class="math notranslate nohighlight">
+\[\cos z = 1 - \frac{z^2}{2!} + \frac{z^4}{4!} - \frac{z^6}{6!} + ... + \frac{(-1)^m}{(2m)!} z^{2m} + ...\]</div>
+<p>であるから、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\frac{\cos z}{z^2} &amp;= \frac{1}{z^2} \{ 1 - \frac{z^2}{2!} + \frac{z^4}{4!} - ^frac{z^6}{6!} + ... + \frac{(-1)^m}{(2m)!} z^{2m} + ... \} \\
+&amp;= \underbrace{\frac{1}{z^2}}_{主要部} - \frac{1}{2!} + \frac{z^2}{4!} - \frac{z^4}{6!} + ... + \frac{(-1)^m}{(2m!)} z^{2m -2} + ...\end{split}\]</div>
+<p>となる。</p>
+<p><span class="math notranslate nohighlight">\(e^z\)</span> のマクローリン展開は</p>
+<div class="math notranslate nohighlight">
+\[e^z = 1 + z + \frac{z^2}{2!} + ... + \frac{z^n}{n!} + ...\]</div>
+<p>であるから、 <span class="math notranslate nohighlight">\(e^{1/z}\)</span> は</p>
+<div class="math notranslate nohighlight">
+\[e^{1/z} = 1 + \underbrace{\frac{1}{z} + \frac{1}{2!} \frac{1}{z^2} + \frac{1}{3!} \frac{1}{z^3} + ... }_{主要部}\]</div>
+<p>となる。</p>
+</section>
+<section id="z">
+<h3><span class="math notranslate nohighlight">\(z\)</span> で場合分けが必要な例<a class="headerlink" href="#z" title="Link to this heading"></a></h3>
+<p>次の例は <span class="math notranslate nohighlight">\(z\)</span> で場合分けが必要な例である。
+<span class="math notranslate nohighlight">\(z\)</span> により内部に含む特異点が異なるため、場合分けをして展開する必要がある。</p>
+<p><span class="math notranslate nohighlight">\(f(z) = \frac{1}{z(z + 1)\)</span> は <span class="math notranslate nohighlight">\(z = 0, -1\)</span> に特異点を持つ。
+したがって、 <span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 1\)</span> と <span class="math notranslate nohighlight">\(1 &lt; |z|\)</span> の二通りに分けて考える。
+<span class="math notranslate nohighlight">\(0 &lt; |z| &lt; 1\)</span> のとき <span class="math notranslate nohighlight">\(|-z| = |z| &lt; 1\)</span> なので（マクローリン展開ができる条件を確かめている）、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}f(z) &amp;= \frac{1}{z} \frac{1}{1 - (-z)} \\
+&amp;= \frac{1}{z} \{ 1 + (-z) + (-z)^2 + (-z)^3 + ... \} \\
+&amp;= \frac{1}{z} -1 + z - z^2 + ...\end{split}\]</div>
+<p>と Laurent 展開できる。</p>
+</section>
+<section id="z-0-laurent">
+<h3><span class="math notranslate nohighlight">\(z = 0\)</span> 以外で Laurent 展開する例<a class="headerlink" href="#z-0-laurent" title="Link to this heading"></a></h3>
+<p>次に、関数 <span class="math notranslate nohighlight">\(f(z) = \frac{1}{z(z + 2i)}\)</span> を <span class="math notranslate nohighlight">\(z = -2i\)</span> のまわりで Laurent 展開する場合を考える。
+この関数の特異点は <span class="math notranslate nohighlight">\(z = 0, -2i\)</span> である。
+ここで <span class="math notranslate nohighlight">\(z + 2i = \zeta\)</span> とおき、さらに <span class="math notranslate nohighlight">\(f(z) = g(\zeta)\)</span> とおくと、
+<span class="math notranslate nohighlight">\(g(\zeta) = \frac{1}{\zeta (\zeta - 2i)}\)</span> となり、特異点は <span class="math notranslate nohighlight">\(\zeta = 0, 2i\)</span> である。
+<span class="math notranslate nohighlight">\(z = -2i\)</span> で展開するのは <span class="math notranslate nohighlight">\(\zeta = 0\)</span> で展開することと同じなので、
+これまでと同様に計算することができる。</p>
+<p><span class="math notranslate nohighlight">\(0 &lt; |\zeta| &lt; 2\)</span> のとき <span class="math notranslate nohighlight">\(|\frac{\zeta}{2i}| = \frac{|\zeta|}{2} &lt; 1\)</span> より、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}g(\zeta) &amp;= \frac{1}{\zeta} \frac{1}{(-2i)(1 - \frac{\zeta}{2i})} = \frac{i}{2 \zeta} \frac{1}{1 - \frac{\zeta}{2i}} \\
+&amp;= \frac{i}{2 \zeta} \{ 1 + \frac{\zeta}{2i} + (\frac{\zeta}{2i})^2 + (\frac{\zeta}{2i})^3 + ... \} \\
+&amp;= \frac{i}{2 \zeta} + \frac{1}{4} - \frac{i \zeta}{8} - \frac{\zeta^2}{16} + ...\end{split}\]</div>
+<p>よって、 <span class="math notranslate nohighlight">\(\zeta\)</span> に <span class="math notranslate nohighlight">\(z + 2i\)</span> を代入すると、 <span class="math notranslate nohighlight">\(z = -2i\)</span> のわまりの Laurent 展開は</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \frac{i}{2(z + 2i)} + \frac{1}{4} - \frac{i(z + 2i)}{8} - \frac{(z + 2i)^2}{16} + ...\]</div>
+<p>となる。</p>
+<p><span class="math notranslate nohighlight">\(2 &lt; |\zeta|\)</span> のとき <span class="math notranslate nohighlight">\(|\frac{2i}{\zeta}| = \frac{2}{|\zeta|} &lt; 1\)</span> より、</p>
+<div class="math notranslate nohighlight">
+\[g(\zeta) = \frac{1}{\zeta} \frac{1}{\zeta (1 - \frac{2i}{\zeta})} = \frac{1}{\zeta^2} \frac{1}{1 - \frac{2i}{\zeta}}\]</div>
+<p>である。これまでと同様に <span class="math notranslate nohighlight">\(\frac{1}{1 -\frac{2i}{\zeta}}\)</span> をマクローリン展開し、
+<span class="math notranslate nohighlight">\(\zeta = z + 2i\)</span> を代入すると</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \frac{1}{(z + 2i)^2} + \frac{2i}{(z + 2i)^3} - \frac{4}{(z + 2i)^4} ...\]</div>
+<p>となる。</p>
+<p><span class="math notranslate nohighlight">\(z = 0\)</span> 以外の点で Laurent 展開するときのポイントは、
+新しい変数 <span class="math notranslate nohighlight">\(\zeta\)</span> などを導入して <span class="math notranslate nohighlight">\(\zeta = 0\)</span> として、マクローリン展開を適用すればよい。
+マクローリン展開する際にはその変数の収束範囲を考慮して式を変形、展開する必要がある。</p>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>特異点と極</p>
+<p><span class="math notranslate nohighlight">\(z_0\)</span> が関数 <span class="math notranslate nohighlight">\(f(z)\)</span> の特異点であるとは、
+<span class="math notranslate nohighlight">\(f(z)\)</span> は <span class="math notranslate nohighlight">\(z_0\)</span> で正則でないが、 <span class="math notranslate nohighlight">\(z_0\)</span> のどんな近傍をとっても
+その中の少なくとも1点が正則であることをいう。</p>
+<p><span class="math notranslate nohighlight">\(z_0\)</span> が <span class="math notranslate nohighlight">\(m\)</span> 位の極とは、関数 <span class="math notranslate nohighlight">\(f(z)\)</span> の Laurent 展開が</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \sum_{n=0}^\infty a_n (z - z_0)^n + \frac{b_1}{z - z_0} + \frac{b_2}{(z - z_0)^2} + ... + \frac{b_m}{(z - z_0)^m}\]</div>
+<p>の形のとき、 <span class="math notranslate nohighlight">\(z_0\)</span> を <span class="math notranslate nohighlight">\(m\)</span> 位の極という。</p>
+<p>つまり、「極」というのは Laurent 展開を考えたときに初めて出てくるものとなる。</p>
+</div>
+</section>
 </section>
 <section id="id11">
 <h2>留数定理<a class="headerlink" href="#id11" title="Link to this heading"></a></h2>
@@ -618,11 +701,11 @@ c_n &amp;= \frac{1}{2 \pi i} \underbrace{\int_C}_{積分路は C } \frac{f(z)}{(
 孤立特異点 <span class="math notranslate nohighlight">\(z = 1\)</span> を除いて、 <span class="math notranslate nohighlight">\(C\)</span> 上と <span class="math notranslate nohighlight">\(C\)</span> の内部で <span class="math notranslate nohighlight">\(f(z)\)</span> は正則である。
 <span class="math notranslate nohighlight">\(z = 1\)</span> における留数を考える。 <span class="math notranslate nohighlight">\(f(z)\)</span> を Laurent 展開する。</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}f(z) = &amp;= \frac{e^{^z}}{(z - 1)^2}
+\[\begin{split}f(z) &amp;= \frac{e^{-z}}{(z - 1)^2}
 = \frac{e^{-1} e^{-(z-1)}}{(z - 1)^2}
-= \frac{1}{e} \frac{1}{(z - 1)^2} \sum_{n=0}^\infty \frac{(-1)^n (z-1)^n}{n!} \\
+= \frac{1}{e} \frac{1}{(z - 1)^2} \underbrace{\sum_{n=0}^\infty \frac{(-1)^n (z-1)^n}{n!}}_{e^{-(z-1)} のマクローリン展開} \\
 &amp;= \sum_{n=0}^\infty \frac{(-1)^n}{n!e} (z - 1)^{n-2} \\
-&amp;= \underbrace{\frac{1}{e}}_{b_2 の項} \frac{1}{(z - 1)^2} - \underbrace{\frac{1}{e}}_{b_1 の項} \frac{1}{z - 1} + \frac{1}{2! e} - \frac{1}{3! e}(z - 1)+ ... \\
+&amp;= \underbrace{\frac{1}{e} \frac{1}{(z - 1)^2}}_{b_2 の項} + \underbrace{(- \frac{1}{e}) \frac{1}{(z - 1)^1}}_{b_1 の項} + \frac{1}{2! e} - \frac{1}{3! e}(z - 1)+ ... \\
 \therefore b_1 &amp;= - \frac{1}{e}\end{split}\]</div>
 <p>ここで、 Laurent 展開の公式で係数 <span class="math notranslate nohighlight">\(b_n\)</span> は次の形で与えられるのであった。</p>
 <div class="math notranslate nohighlight">
@@ -632,13 +715,14 @@ c_n &amp;= \frac{1}{2 \pi i} \underbrace{\int_C}_{積分路は C } \frac{f(z)}{(
 \[\int_C f(z) dz = 2 \pi i b_1\]</div>
 <p>である。よって、 <span class="math notranslate nohighlight">\(b_1 = - \frac{1}{e}\)</span> を代入して、</p>
 <div class="math notranslate nohighlight">
-\[\int_C \frac{e^{-z}}{(z - 1)^2} dz = - \frac{2 \pi i}{e}\]</div>
+\[\int_C \underbrace{\frac{e^{-z}}{(z - 1)^2}}_{f(z)} dz = - \frac{2 \pi i}{e}\]</div>
 <p>となる。</p>
 <p>このように、留数を用いることで積分を計算することが可能である。</p>
 <p>次の留数定理は、ジョルダン曲線 <span class="math notranslate nohighlight">\(C\)</span> が正の向きを持ち、 <span class="math notranslate nohighlight">\(f(z)\)</span> が <span class="math notranslate nohighlight">\(C\)</span> の上で正則であるとき、
 <span class="math notranslate nohighlight">\(\int_C f(z) dz\)</span> の値は <span class="math notranslate nohighlight">\(C\)</span> の <strong>内部にある孤立特異点のそれぞれにおける留数の和</strong> の <span class="math notranslate nohighlight">\(2 \pi i\)</span> 倍であることを
 主張している。</p>
 <hr class="docutils" />
+<p><strong>留数定理</strong></p>
 <p><span class="math notranslate nohighlight">\(C\)</span> は正の向きを持つジョルダン曲線、 <span class="math notranslate nohighlight">\(f(z)\)</span> は <span class="math notranslate nohighlight">\(C\)</span> の内部にある
 有限個の特異点 <span class="math notranslate nohighlight">\(z_1, z_2, ..., z_n\)</span> を除いて正則であるとする。
 特異点 <span class="math notranslate nohighlight">\(z_j\)</span> における留数を <span class="math notranslate nohighlight">\(R(z_j)\)</span> とすると</p>
@@ -711,6 +795,13 @@ c_n &amp;= \frac{1}{2 \pi i} \underbrace{\int_C}_{積分路は C } \frac{f(z)}{(
 \[\begin{split}q'(z) &amp;= r(z) + (z - z_0) r'(z) \\
 \therefore q'(z_0) &amp;= r(z_0) \\
 \therefore R(z_0) &amp;= \frac{p(z_0)}{q'(z_0)}\end{split}\]</div>
+<div class="admonition note">
+<p class="admonition-title">注釈</p>
+<p>極を考えるときに分子に <span class="math notranslate nohighlight">\(z\)</span> の式が含まれていてよい。
+例えば、次の式の極は <span class="math notranslate nohighlight">\(z = -4\)</span> に1位の極、 <span class="math notranslate nohighlight">\(z = 1\)</span> に2位の極を持つ。</p>
+<div class="math notranslate nohighlight">
+\[f(z) = \frac{50z}{(z + 4)(z - 1)^2}\]</div>
+</div>
 </section>
 </section>
 </section>
