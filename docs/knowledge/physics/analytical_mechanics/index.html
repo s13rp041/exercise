@@ -17,6 +17,7 @@
       <script src="../../../_static/doctools.js?v=9bcbadda"></script>
       <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
       <script src="../../../_static/translations.js?v=4755f45a"></script>
+      <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script src="../../../_static/js/theme.js"></script>
     <link rel="index" title="索引" href="../../../genindex.html" />
     <link rel="search" title="検索" href="../../../search.html" />
@@ -49,7 +50,10 @@
 <li class="toctree-l1 current"><a class="reference internal" href="../../index.html">分野のまとめ</a><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../../math/index.html">数学</a></li>
 <li class="toctree-l2 current"><a class="reference internal" href="../index.html">物理</a><ul class="current">
-<li class="toctree-l3 current"><a class="current reference internal" href="#">解析力学</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">解析力学</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id2">ばねの運動</a></li>
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -84,7 +88,53 @@
              
   <section id="id1">
 <h1>解析力学<a class="headerlink" href="#id1" title="Link to this heading"></a></h1>
-<p>TBD</p>
+<section id="id2">
+<h2>ばねの運動<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>次のばねとおもりの運動を考える。</p>
+<hr class="docutils" />
+<p>天井からつるされたばね定数 <span class="math notranslate nohighlight">\(k\)</span> の先に質量 <span class="math notranslate nohighlight">\(m\)</span> のおもりをつける。
+おもりのついていないときのばねの自然長を <span class="math notranslate nohighlight">\(l\)</span> とし、ばね自体の質量は考えないとする。
+天井から垂直下向きを <span class="math notranslate nohighlight">\(x\)</span> 軸の正の方向とし、おもりを初期位置 <span class="math notranslate nohighlight">\(x = l\)</span> 、
+初速度ゼロで手を離したとする。手を離した時刻を <span class="math notranslate nohighlight">\(t = 0\)</span> とし、その後の単振動の
+振幅と初期位相、および振動数を求めることを考える。</p>
+<hr class="docutils" />
+<p>天井の位置を <span class="math notranslate nohighlight">\(x = 0\)</span> とし、時刻 <span class="math notranslate nohighlight">\(t\)</span> での運動しているおもりの位置を <span class="math notranslate nohighlight">\(x(t)\)</span> とする。
+このときばねの伸びは <span class="math notranslate nohighlight">\(x(t) - l\)</span> であるから、運動方程式は次のようになる。</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}m \frac{d^2x}{dt^2} &amp;= mg -k(x - l) \\
+&amp;= -kx + kl + mg \\
+&amp;= -k(x - l - \frac{mg}{k}) \\
+m \frac{d^2}{dt^2} (x - l -\frac{mg}{k}) &amp;= -k(x - l - \frac{mg}{k}) \\
+m \ddot{X} &amp;= -kX\end{split}\]</div>
+<p>ここで <span class="math notranslate nohighlight">\(X(t) = x(t) - l - \frac{mg}{k}\)</span> とおいた。
+すると</p>
+<div class="math notranslate nohighlight">
+\[\ddot{X} = - \frac{k}{m} X = - \omega^2 X \quad (\omega = \sqrt{\frac{k}{m}} とした)\]</div>
+<p><span class="math notranslate nohighlight">\(X(t) = \sin \omega t, X(t) = \cos \omega t\)</span> は上式を満たすから、
+この微分方程式の特解である。よって、これらの線形結合も解（一般解）であるから、</p>
+<div class="math notranslate nohighlight">
+\[X(t) = A \sin \omega t + B \cos \omega t = C \cos (\omega t + \phi)\]</div>
+<p>とおける。但し、 <span class="math notranslate nohighlight">\(0 \leq \phi &lt; 2 \pi\)</span> とする。</p>
+<p>初期位置 <span class="math notranslate nohighlight">\(x = l\)</span> から、 <span class="math notranslate nohighlight">\(x(0) = l\)</span> であるので、
+<span class="math notranslate nohighlight">\(X(0) = x(0) - l - \frac{mg}{k} = - \frac{mg}{k}\)</span> となる。
+また、初速度ゼロであるから <span class="math notranslate nohighlight">\(\dot{x(0)} = 0\)</span> なので、
+<span class="math notranslate nohighlight">\(\dot{X(0)} = \dot{x(0)} = 0\)</span> より、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X(0) &amp;= B = C \cos(\phi) = - \frac{mg}{k} \\
+\dot{X(0)} &amp;= \omega A = - \omega C \sin (\phi) = 0\end{split}\]</div>
+<p>となる。下の式から <span class="math notranslate nohighlight">\(A = 0\)</span> であり、 <span class="math notranslate nohighlight">\(\phi = 0, \pi\)</span> である。</p>
+<p><span class="math notranslate nohighlight">\(\phi = 0\)</span> のとき、 <span class="math notranslate nohighlight">\(\cos \phi = 1\)</span> であるから <span class="math notranslate nohighlight">\(X(0) = B = C = - \frac{mg}{k}\)</span> となる。
+よって、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X(t) &amp;= - \frac{mg}{k} \cos (\omega t) \\
+x(t) - l - \frac{mg}{k} &amp;= - \frac{mg}{k} \cos (\omega t) \\
+\therefore x(t) &amp;= l + \frac{mg}{k} - \frac{mg}{k} \cos (\omega t)\end{split}\]</div>
+<p>となる。 <span class="math notranslate nohighlight">\(\phi = \pi\)</span> のときは、 <span class="math notranslate nohighlight">\(\cos \phi = -1\)</span> であるから
+<span class="math notranslate nohighlight">\(X(0) = B = -C = - \frac{mg}{k}\)</span> となるので、</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}X(t) &amp;= \frac{mg}{k} \cos (\omega t + \pi) \\
+\therefore x(t) &amp;= l + \frac{mg}{k} + \frac{mg}{k} \cos (\omega t + \pi)\end{split}\]</div>
+</section>
 </section>
 
 
